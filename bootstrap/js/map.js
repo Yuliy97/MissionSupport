@@ -24,6 +24,7 @@ function geocodeAddress(geocoder, resultsMap) {
         position: results[0].geometry.location
       });
       document.getElementById('close').click();
+      document.getElementById('address').value = "";
     } else {
       alert('Geocode was not successful for the following reason: ' + status);
     }
