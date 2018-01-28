@@ -1,0 +1,25 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <a class="navbar-brand" [routerLink] = "['/']">Mission Support</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarColor01">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link" [routerLink] = "['/']">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" [routerLink] = "['/']">Sites <span class="sr-only">(current)</span></a>
+      </li>
+    </ul>
+    <ul class="navbar-nav mr-sm-2">
+      <li [routerLinkActive] = "['active']" [routerLinkActiveOptions] = "{exact:true}" class="nav-item active">
+        <button type="button" class="btn btn-primary" [routerLink] = "['/login']">Login</button>
+      </li>
+      <li [routerLinkActive] = "['active']" [routerLinkActiveOptions] = "{exact:true}" class="nav-item active">
+        <button type="button" class="btn btn-primary" [routerLink] = "['/registration']">Register</button>
+      </li>
+    </ul>
+  </div>
+</nav>

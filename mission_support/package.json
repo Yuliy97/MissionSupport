@@ -1,0 +1,22 @@
+{
+  "name": "mission_support",
+  "version": "1.0.0",
+  "description": "MEAN application for Mission Support -- a website created to help connect medical organizations.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app"
+  },
+  "dependencies": {
+    "express": "*",
+    "mongoose": "*",
+    "bcryptjs": "*",
+    "cors": "*",
+    "jsonwebtoken": "*",
+    "body-parser": "*",
+    "passport": "*",
+    "passport-jwt": "*"
+  },
+  "author": "French Toast Mafia, JIE 7335.",
+  "license": "ISC"
+}
