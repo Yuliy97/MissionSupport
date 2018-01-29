@@ -15,10 +15,16 @@
     </ul>
     <ul class="navbar-nav mr-sm-2">
       <li [routerLinkActive] = "['active']" [routerLinkActiveOptions] = "{exact:true}" class="nav-item active">
+        <button type="button" class="btn btn-primary" [routerLink] = "['/profile']">Profile</button>
+      </li>
+      <li [routerLinkActive] = "['active']" [routerLinkActiveOptions] = "{exact:true}" class="nav-item active">
         <button type="button" class="btn btn-primary" [routerLink] = "['/login']">Login</button>
       </li>
       <li [routerLinkActive] = "['active']" [routerLinkActiveOptions] = "{exact:true}" class="nav-item active">
         <button type="button" class="btn btn-primary" [routerLink] = "['/registration']">Register</button>
+      </li>
+      <li class="nav-item active">
+        <button type="button" class="btn btn-primary" (click)="on_logout()">Logout</button>
       </li>
     </ul>
   </div>

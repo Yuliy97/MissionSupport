@@ -1,0 +1,22 @@
+.container {
+  margin-top: 5%;
+}
+
+.container {
+  text-align: center;
+}
+
+.form {
+  margin: auto;
+}
+
+small {
+  font-style: italic;
+}
+
+input {
+  text-align: center;
+  width: 50%;
+  display: block;
+  margin: 0 auto;
+}

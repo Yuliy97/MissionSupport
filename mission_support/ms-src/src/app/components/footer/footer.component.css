@@ -2,7 +2,7 @@ footer.footer {
   padding-top: 2rem;
   padding-bottom: 2rem;
   width: 100%;
-  position: fixed;
+  position: relative;
   bottom: 0px;
   text-align: center;
 }

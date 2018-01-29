@@ -7,35 +7,35 @@ const User = require('../model/user');
 
 
 // Registration
-router.post('/register', function(request, response, next) {
+router.post('/register', function(req, res, next) {
   let new_user = new User({
-    first_name: request.body.first_name,
-    last_name: request.body.last_name,
-    username: request.body.username,
-    email: request.body.email,
-    password: request.body.password
+    first_name: req.body.first_name,
+    last_name: req.body.last_name,
+    username: req.body.username,
+    email: req.body.email,
+    password: req.body.password
   });
 
   User.add_user(new_user, function(err, user) {
     if (err) {
-      response.json({success: false, message: 'Failed to register user!'});
+      res.json({success: false, message: 'Failed to register user!'});
     } else {
-      response.json({success: true, messsage: 'User registered successfully!'});
+      res.json({success: true, messsage: 'User registered successfully!'});
     }
   });
 });
 
 // Auth
-router.post('/auth', function(request, response, next) {
-  const username = request.body.username;
-  const password = request.body.password;
+router.post('/auth', function(req, res, next) {
+  const username = req.body.username;
+  const password = req.body.password;
 
   User.get_user_by_username(username, function(err, user) {
     if (err) {
       throw err;
     }
     if (!user) {
-      return response.json({success: false, message: 'User not found!'});
+      return res.json({success: false, message: 'User not found!'});
     }
 
     User.compare_password(password, user.password, function(err, isMatch){
@@ -47,26 +47,26 @@ router.post('/auth', function(request, response, next) {
           expiresIn: 1800
         });
 
-        response.json({
+        res.json({
           success: true,
-          token: 'jwt' + token,
+          token: 'jwt ' + token,
           user: {
             id: user._id,
-            name: user.first_name + ' ' + user.last_name,
+            name: user.first_name,
             username: user.username,
             email: user.email
           }
         });
       } else {
-        return response.json({success: false, message: 'Incorrect password!'});
+        return res.json({success: false, message: 'Incorrect password!'});
       }
     });
   });
 });
 
 // Profile
-router.get('/profile', passport.authenticate('jwt', {session: false}), function(request, response, next) {
-  response.json({user: request.user});
+router.get('/profile', passport.authenticate('jwt', {session: false}), function(req, res, next) {
+  res.json({user: req.user});
 });
 
 module.exports = router;
