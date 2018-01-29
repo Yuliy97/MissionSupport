@@ -6,3 +6,4 @@ There is currently no global platform available for medical organizations to sha
 Mission Support is successful solution would include a website and mobile (iOS/Android) implementation that would allow for this exchange of information and provide a hub for communication. 
 
 # Setup
+Install NodeJS
