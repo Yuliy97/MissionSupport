@@ -18,5 +18,8 @@
     "passport-jwt": "*"
   },
   "author": "French Toast Mafia, JIE 7335.",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "@angular/cli": "^1.6.6"
+  }
 }
