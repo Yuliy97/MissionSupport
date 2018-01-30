@@ -7,3 +7,12 @@ Mission Support is successful solution would include a website and mobile (iOS/A
 
 # Setup
 Install NodeJS
+Install MongoDB
+
+npm install -g nodemon
+npm install -g angular-cli
+
+first terminal window: cd into MissionSupport/mission_support and enter nodemon
+second terminal window: cd into MissionSupport/mission_support/ms-src and enter ng serve
+
+go into browser window and http://localhost:4200
