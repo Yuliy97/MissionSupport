@@ -14,7 +14,11 @@ Clone Repository to local machine
 
 npm install -g nodemon
 
-npm install -g angular-cli
+npm install -g @angular/cli
+
+npm install in MissionSupport/mission_support
+
+npm install in MissionSupport/mission_support/ms-src
 
 first terminal window: cd into MissionSupport/mission_support and type 'nodemon'
 
