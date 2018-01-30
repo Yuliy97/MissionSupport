@@ -6,9 +6,9 @@ There is currently no global platform available for medical organizations to sha
 Mission Support is successful solution would include a website and mobile (iOS/Android) implementation that would allow for this exchange of information and provide a hub for communication. 
 
 # Setup
-Install NodeJS
+Install NodeJS with steps at https://nodejs.org/en/download/
 
-Install MongoDB
+Install MongoDB with steps at https://treehouse.github.io/installation-guides/mac/mongo-mac.html
 
 npm install -g nodemon
 
