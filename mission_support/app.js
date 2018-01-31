@@ -43,6 +43,10 @@ app.get('/', function(request, response) {
   response.send('Invalid endpoint, try again later');
 });
 
+app.get('*', function(request, response) {
+  response.sendFile(path.join(__dirname, 'client/index.html'));
+});
+
 app.listen(port, function() {
   console.log('Server has started on port ' + port + ' successfully');
 });
