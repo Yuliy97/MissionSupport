@@ -1,4 +1,4 @@
-.text-center {
+.jumbotron {
   margin-top: 5%;
 }
 
@@ -12,7 +12,7 @@ body {
   min-height: 100%;
   overflow: hidden;
   height: calc(100vh - 8em);
-  padding: 4em;
+  padding: 3em;
 }
 
 .line-1{
