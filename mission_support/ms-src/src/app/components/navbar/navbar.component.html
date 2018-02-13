@@ -12,6 +12,9 @@
       <li class="nav-item">
         <a class="nav-link" [routerLink] = "['/']">Sites <span class="sr-only">(current)</span></a>
       </li>
+      <li >
+        <button type="button" class="btn btn-primary" [routerLink] = "['/about']">About Us</button>
+      </li >
     </ul>
     <ul class="navbar-nav mr-sm-2">
       <li *ngIf="auth_service.loggedIn()" [routerLinkActive] = "['active']" [routerLinkActiveOptions] = "{exact:true}" class="nav-item active">

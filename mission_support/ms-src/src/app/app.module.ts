@@ -11,17 +11,20 @@ import { RegistrationComponent } from './components/registration/registration.co
 import { HomeComponent } from './components/home/home.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { AboutComponent } from './components/about/about.component';
 
 import { AuthService } from './services/auth.service';
 import { ValidateService } from './services/validate.service';
 import { FlashMessagesModule } from 'angular2-flash-messages/module';
 import { AuthGuard } from './guards/auth.guard';
 
+
 const appRoutes: Routes = [
     {path: '', component: HomeComponent},
     {path: 'registration', component: RegistrationComponent},
     {path: 'login', component: LoginComponent},
-    {path: 'profile', component: ProfileComponent, canActivate:[AuthGuard]}
+    {path: 'profile', component: ProfileComponent, canActivate:[AuthGuard]},
+    {path: 'about', component: AboutComponent}
 ]
 
 @NgModule({
@@ -32,7 +35,8 @@ const appRoutes: Routes = [
     RegistrationComponent,
     HomeComponent,
     ProfileComponent,
-    FooterComponent
+    FooterComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,
