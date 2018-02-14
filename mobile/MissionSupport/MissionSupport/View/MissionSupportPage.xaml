@@ -1,4 +1,49 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:MissionSupport" x:Class="MissionSupport.MissionSupportPage">
-	<Label Text="Welcome to Xamarin Forms!" VerticalOptions="Center" HorizontalOptions="Center" />
+<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:MissionSupport" x:Class="MissionSupport.MissionSupportPage" BackgroundImage="MissionSupport/Images/backgroud.jpg">    
+<!--    <Label Text="Mission Support" VerticalOptions="Center" HorizontalOptions="Center" FontSize="35" FontAttributes="Bold" TextColor="Teal"/>
+-->
+    <ContentPage.Content>
+  
+      <StackLayout HorizontalOptions="Center" VerticalOptions="Center"> 
+          <Label Text="Mission Support" 
+            HorizontalOptions="Center" 
+            FontSize="40" 
+            FontAttributes="Bold" 
+            TextColor="Teal"/>
+            
+         <Button x:Name = "button1"  
+            Content = "Hover" 
+            Click = "OnClick1" 
+            ClickMode = "Hover" 
+            Margin = "10,40,10,10"  
+            Text="Login"
+            TextColor="White"
+            BackgroundColor="Teal"
+            HorizontalAlignment = "Center" 
+            Foreground = "Gray"/> 
+                    
+         <Button x:Name = "button2"  
+            Content = "Press to Click" 
+            Click = "OnClick2"  
+            ClickMode = "Press" 
+            Margin = "10"  
+            Text="Sign Up"
+            TextColor="White"
+            BackgroundColor="Teal"
+            HorizontalAlignment = "Center"  
+            Foreground = "DarkBlue"/> 
+                    
+         <Button x:Name = "button3"  
+            Content = "Release" 
+            Click = "OnClick3"  
+            ClickMode = "Release" 
+            Margin = "10"  
+            Text="Get Started"
+            TextColor="White"
+            BackgroundColor="Teal"
+            HorizontalAlignment = "Center"/> 
+                    
+      </StackLayout> 
+    </ContentPage.Content>
 </ContentPage>
+

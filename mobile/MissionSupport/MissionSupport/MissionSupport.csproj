@@ -30,6 +30,10 @@
   <ItemGroup>
     <EmbeddedResource Include="View\App.xaml" />
     <EmbeddedResource Include="View\MissionSupportPage.xaml" />
+    <EmbeddedResource Include="View\Login.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -39,8 +43,13 @@
     <Compile Include="View\MissionSupportPage.xaml.cs">
       <DependentUpon>MissionSupportPage.xaml</DependentUpon>
     </Compile>
+<<<<<<< HEAD
     <Compile Include="View\Register.xaml.cs">
       <DependentUpon>Register.xaml</DependentUpon>
+=======
+    <Compile Include="View\Login.xaml.cs">
+      <DependentUpon>Login.xaml</DependentUpon>
+>>>>>>> 374a1ad3bc4568b3f253b6ac68effa9368cd6a3b
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -56,9 +65,11 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+    <None Include="Images\background.jpg" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Model\" />
+<<<<<<< HEAD
     <Folder Include="View_Model\" />
   </ItemGroup>
   <ItemGroup>
@@ -66,6 +77,10 @@
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+=======
+    <Folder Include="View\" />
+    <Folder Include="Images\" />
+>>>>>>> 374a1ad3bc4568b3f253b6ac68effa9368cd6a3b
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <Import Project="..\packages\Xamarin.Forms.2.5.0.121934\build\portable-win+net45+wp80+win81+wpa81\Xamarin.Forms.targets" Condition="Exists('..\packages\Xamarin.Forms.2.5.0.121934\build\portable-win+net45+wp80+win81+wpa81\Xamarin.Forms.targets')" />
