@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -39,6 +39,9 @@
     <Compile Include="View\MissionSupportPage.xaml.cs">
       <DependentUpon>MissionSupportPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\Register.xaml.cs">
+      <DependentUpon>Register.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Xamarin.Forms.Core">
@@ -55,9 +58,14 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="View_Model\" />
     <Folder Include="Model\" />
-    <Folder Include="View\" />
+    <Folder Include="View_Model\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="View\Register.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <Import Project="..\packages\Xamarin.Forms.2.5.0.121934\build\portable-win+net45+wp80+win81+wpa81\Xamarin.Forms.targets" Condition="Exists('..\packages\Xamarin.Forms.2.5.0.121934\build\portable-win+net45+wp80+win81+wpa81\Xamarin.Forms.targets')" />

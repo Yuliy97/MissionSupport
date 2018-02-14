@@ -1,4 +1,5 @@
 ﻿using Xamarin.Forms;
+using MissionSupport.View;
 
 namespace MissionSupport
 {
@@ -8,7 +9,8 @@ namespace MissionSupport
         {
             InitializeComponent();
 
-            MainPage = new MissionSupportPage();
+            //MainPage = new MissionSupportPage();
+            MainPage = new Register();
         }
 
         protected override void OnStart()
