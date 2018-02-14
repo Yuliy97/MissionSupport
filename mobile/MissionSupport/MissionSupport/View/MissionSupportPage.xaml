@@ -1,41 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:MissionSupport" x:Class="MissionSupport.MissionSupportPage" BackgroundImage="MissionSupport/Images/backgroud.jpg">    
-<!--    <Label Text="Mission Support" VerticalOptions="Center" HorizontalOptions="Center" FontSize="35" FontAttributes="Bold" TextColor="Teal"/>
--->
+<!--    <Label Text="Mission Support" VerticalOptions="Center" HorizontalOptions="Center" FontSize="35" FontAttributes="Bold" TextColor="Teal"/>-->
     <ContentPage.Content>
-  
-      <StackLayout HorizontalOptions="Center" VerticalOptions="Center"> 
-          <Label Text="Mission Support" 
-            HorizontalOptions="Center" 
-            FontSize="40" 
-            FontAttributes="Bold" 
-            TextColor="Teal"/>
-            
-         <Button x:Name = "LoginButton"  
-            Clicked = "LoginButton_Clicked" 
-            Margin = "10,40,10,10"  
-            Text="Login"
-            TextColor="White"
-            BackgroundColor="Teal"
-            HorizontalOptions = "Center"/> 
-                    
-         <Button x:Name = "SignupButton"  
-            Clicked = "SignupButton_Clicked"  
-            Margin = "10"  
-            Text="Sign Up"
-            TextColor="White"
-            BackgroundColor="Teal"
-            HorizontalOptions = "Center"/> 
-                    
-         <Button x:Name = "StartButton"  
-            Clicked = "StartButton_Clicked"  
-            Margin = "10"  
-            Text="Get Started"
-            TextColor="White"
-            BackgroundColor="Teal"
-            HorizontalOptions = "Center"/> 
-                    
-      </StackLayout> 
+        <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
+            <Label Text="Mission Support" 
+                    HorizontalOptions="Center" 
+                    FontSize="40" 
+                    FontAttributes="Bold" 
+                    TextColor="Teal"/>
+
+            <Button x:Name = "LoginButton"  
+                    Clicked = "LoginButton_Clicked" 
+                    Margin = "10,40,10,10"  
+                    Text="Login"
+                    TextColor="White"
+                    BackgroundColor="Teal"
+                    HorizontalOptions = "Center"/>
+
+            <Button x:Name = "RegisterButton"  
+                    Clicked = "RegisterButton_Clicked"  
+                    Margin = "10"  
+                    Text="Register"
+                    TextColor="White"
+                    BackgroundColor="Teal"
+                    HorizontalOptions = "Center"/>
+
+            <Button x:Name = "StartButton"  
+                    Clicked = "StartButton_Clicked"  
+                    Margin = "10"  
+                    Text="Get Started"
+                    TextColor="White"
+                    BackgroundColor="Teal"
+                    HorizontalOptions = "Center"/>
+        </StackLayout>
     </ContentPage.Content>
 </ContentPage>
 

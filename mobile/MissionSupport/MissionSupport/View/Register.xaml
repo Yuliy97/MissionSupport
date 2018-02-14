@@ -1,16 +1,21 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="MissionSupport.View.Register">
+        xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+        x:Class="MissionSupport.View.Register">
     <ContentPage.Content>
         <StackLayout VerticalOptions="Center" Margin="30, 10, 30, 10">
             <Label Text="Mission Support"
-               FontSize="40"
-               TextColor="Teal" />
+                    FontSize="40"
+                    TextColor="Teal" />
+
             <Entry x:Name="UsernameEntry" Placeholder="Username" />
+
             <Entry x:Name="FirstNameEntry" Placeholder="First Name" />
+
             <Entry x:Name="LastNameEntry" Placeholder="Last Name" />
+
             <Entry x:Name="PasswordEntry" Placeholder="Password" />
+
             <Button x:Name = "RegisterButton" 
                     Clicked="RegisterButton_Clicked"
                     Text="Register" />

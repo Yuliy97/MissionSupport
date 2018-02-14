@@ -9,7 +9,7 @@ namespace MissionSupport
         {
             InitializeComponent();
 
-            MainPage = new MissionSupportPage();
+            MainPage = new NavigationPage(new MissionSupportPage());
         }
 
         protected override void OnStart()
