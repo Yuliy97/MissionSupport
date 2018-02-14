@@ -12,20 +12,27 @@ import { HomeComponent } from './components/home/home.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { AboutComponent } from './components/about/about.component';
+import { AgmCoreModule } from 'angular2-google-maps/core';
 
 import { AuthService } from './services/auth.service';
 import { ValidateService } from './services/validate.service';
 import { FlashMessagesModule } from 'angular2-flash-messages/module';
 import { AuthGuard } from './guards/auth.guard';
+import { SitesComponent } from './sites/sites.component';
 
 
 const appRoutes: Routes = [
     {path: '', component: HomeComponent},
     {path: 'registration', component: RegistrationComponent},
     {path: 'login', component: LoginComponent},
+    {path: 'sites', component: SitesComponent},
     {path: 'profile', component: ProfileComponent, canActivate:[AuthGuard]},
     {path: 'about', component: AboutComponent}
 ]
+
+const googleMapsCore = AgmCoreModule.forRoot({
+  apiKey: 'AIzaSyBMto85RZ4EaO9BeXqTQYaGL6tCIIlb8JM',
+});
 
 @NgModule({
   declarations: [
@@ -36,14 +43,16 @@ const appRoutes: Routes = [
     HomeComponent,
     ProfileComponent,
     FooterComponent,
-    AboutComponent
+    AboutComponent,
+    SitesComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
     RouterModule.forRoot(appRoutes),
-    FlashMessagesModule
+    FlashMessagesModule,
+    googleMapsCore
   ],
   providers: [ValidateService, AuthService, AuthGuard],
   bootstrap: [AppComponent]
