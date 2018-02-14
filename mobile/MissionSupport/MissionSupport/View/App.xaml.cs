@@ -9,9 +9,8 @@ namespace MissionSupport
         {
             InitializeComponent();
 
-            //MainPage = new MissionSupportPage();
-            MainPage = new Login();
-            //Login = new Login();
+            MainPage = new MissionSupportPage();
+            //MainPage = new Login();
         }
 
         protected override void OnStart()
