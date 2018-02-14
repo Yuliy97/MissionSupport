@@ -18,7 +18,7 @@ import { AuthService } from './services/auth.service';
 import { ValidateService } from './services/validate.service';
 import { FlashMessagesModule } from 'angular2-flash-messages/module';
 import { AuthGuard } from './guards/auth.guard';
-import { SitesComponent } from './sites/sites.component';
+import { SitesComponent } from './components/sites/sites.component';
 
 
 const appRoutes: Routes = [
