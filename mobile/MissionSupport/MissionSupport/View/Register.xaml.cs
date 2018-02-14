@@ -16,5 +16,10 @@ namespace MissionSupport.View
         {
             InitializeComponent();
         }
+
+        private void RegisterButton_Clicked(object sender, EventArgs e)
+        {
+
+        }
     }
 }

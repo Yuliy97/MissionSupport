@@ -11,37 +11,29 @@
             FontAttributes="Bold" 
             TextColor="Teal"/>
             
-         <Button x:Name = "button1"  
-            Content = "Hover" 
-            Click = "OnClick1" 
-            ClickMode = "Hover" 
+         <Button x:Name = "LoginButton"  
+            Clicked = "LoginButton_Clicked" 
             Margin = "10,40,10,10"  
             Text="Login"
             TextColor="White"
             BackgroundColor="Teal"
-            HorizontalAlignment = "Center" 
-            Foreground = "Gray"/> 
+            HorizontalOptions = "Center"/> 
                     
-         <Button x:Name = "button2"  
-            Content = "Press to Click" 
-            Click = "OnClick2"  
-            ClickMode = "Press" 
+         <Button x:Name = "SignupButton"  
+            Clicked = "SignupButton_Clicked"  
             Margin = "10"  
             Text="Sign Up"
             TextColor="White"
             BackgroundColor="Teal"
-            HorizontalAlignment = "Center"  
-            Foreground = "DarkBlue"/> 
+            HorizontalOptions = "Center"/> 
                     
-         <Button x:Name = "button3"  
-            Content = "Release" 
-            Click = "OnClick3"  
-            ClickMode = "Release" 
+         <Button x:Name = "StartButton"  
+            Clicked = "StartButton_Clicked"  
             Margin = "10"  
             Text="Get Started"
             TextColor="White"
             BackgroundColor="Teal"
-            HorizontalAlignment = "Center"/> 
+            HorizontalOptions = "Center"/> 
                     
       </StackLayout> 
     </ContentPage.Content>
