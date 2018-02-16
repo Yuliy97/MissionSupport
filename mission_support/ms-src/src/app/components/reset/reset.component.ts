@@ -31,7 +31,7 @@ export class ResetComponent implements OnInit {
       if (data.success) {
         this.flash_message.show('An email has been sent with your password!', {cssClass: 'alert-success', timeout: 3000});
       } else {
-        this.flash_message.show('Something went wrong, please try again.', {cssClass: 'alert-danger', timeout: 3000});
+        this.flash_message.show('Hmm, please try a different email.', {cssClass: 'alert-danger', timeout: 3000});
       }
     });
   }
