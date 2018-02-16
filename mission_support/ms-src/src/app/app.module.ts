@@ -19,6 +19,7 @@ import { ValidateService } from './services/validate.service';
 import { FlashMessagesModule } from 'angular2-flash-messages/module';
 import { AuthGuard } from './guards/auth.guard';
 import { SitesComponent } from './components/sites/sites.component';
+import { ResetComponent } from './components/reset/reset.component';
 
 
 const appRoutes: Routes = [
@@ -26,6 +27,7 @@ const appRoutes: Routes = [
     {path: 'registration', component: RegistrationComponent},
     {path: 'login', component: LoginComponent},
     {path: 'sites', component: SitesComponent},
+    {path: 'reset', component: ResetComponent},
     {path: 'profile', component: ProfileComponent, canActivate:[AuthGuard]},
     {path: 'about', component: AboutComponent}
 ]
@@ -44,7 +46,8 @@ const googleMapsCore = AgmCoreModule.forRoot({
     ProfileComponent,
     FooterComponent,
     AboutComponent,
-    SitesComponent
+    SitesComponent,
+    ResetComponent
   ],
   imports: [
     BrowserModule,

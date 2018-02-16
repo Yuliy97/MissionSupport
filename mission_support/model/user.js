@@ -55,6 +55,11 @@ module.exports.get_user_by_username = function(username, callback) {
   User.findOne(query, callback);
 }
 
+module.exports.get_user_by_email = function(email, callback) {
+  const query = {email: email}
+  User.findOne(query, callback);
+}
+
 module.exports.add_user = function(new_user, callback) {
   bcrypt.genSalt(10, function(err, salt) {
     bcrypt.hash(new_user.password, salt, function(err, hash) {

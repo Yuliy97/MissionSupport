@@ -69,4 +69,21 @@ router.get('/profile', passport.authenticate('jwt', {session: false}), function(
   res.json({user: req.user});
 });
 
+// Reset
+router.post('/reset', function(req, res, next) {
+  const email = req.body.email;
+
+  User.get_user_by_email(email, function(err, user) {
+    if (err) {
+      throw err;
+    }
+
+    if (!user) {
+      return res.json({success: false, message: 'User not found!'});
+    }
+
+    res.json({success: true, message: 'Email sent!'});
+  });
+});
+
 module.exports = router;
