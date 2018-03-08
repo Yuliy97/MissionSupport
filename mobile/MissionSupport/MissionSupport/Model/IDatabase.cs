@@ -1,6 +1,6 @@
 ﻿namespace MissionSupport.Model
 {
-    interface IDatabase
+    public interface IDatabase
     {
         bool userExists(string email);
 

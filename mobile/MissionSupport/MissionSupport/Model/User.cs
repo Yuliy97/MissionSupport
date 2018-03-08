@@ -1,6 +1,6 @@
 ﻿namespace MissionSupport.Model
 {
-    class User
+    public class User
     {
         public string Email { get; private set; }
         public string FirstName { get; private set; }
