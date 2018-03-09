@@ -36,6 +36,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\MasterDetailMain.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Model\FakeDatabase.cs" />
@@ -53,6 +57,9 @@
     </Compile>
     <Compile Include="View\Login.xaml.cs">
       <DependentUpon>Login.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\MasterDetailMain.xaml.cs">
+      <DependentUpon>MasterDetailMain.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
