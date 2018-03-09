@@ -23,7 +23,15 @@ namespace MissionSupport.View
 
         private void RegisterButton_Clicked(object sender, EventArgs e)
         {
-
+            User newUser = new User(EmailEntry.Text, UsernameEntry.Text, FirstNameEntry.Text, LastNameEntry.Text);
+            if (database.createUser(newUser, PasswordEntry.Text))
+            {
+                DisplayAlert("Register", "Register Success", "OK");
+            }
+            else
+            {
+                DisplayAlert("Register", "Register Fail", "OK");
+            }
         }
     }
 }

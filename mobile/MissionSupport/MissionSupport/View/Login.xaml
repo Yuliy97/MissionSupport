@@ -19,6 +19,7 @@
             <Button x:Name="LoginButton" 
                 Text="Login" 
                 BackgroundColor="Teal"
+                Clicked="SignInCheck"
             />
         </StackLayout>
     </ContentPage.Content>

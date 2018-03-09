@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using MissionSupport.Model;
 
 using Xamarin.Forms;
-using MissionSupport.Model;
+//using MissionSupport.Model;
 
 
 namespace MissionSupport.View
@@ -17,17 +17,17 @@ namespace MissionSupport.View
             InitializeComponent();
 
             this.database = database;
+            //SignInCheck();
         }
 
-        //void SignIn() {
-        //    //IDatabase db = new IDatabase();
-        //    //User user = new User(UsernameEntry.Text, PasswordEntry.Text);
+        void SignInCheck(object sender, EventArgs e) {
+            
+            if (database.login(UsernameEntry.Text, PasswordEntry.Text)) {
+                DisplayAlert("Login", "Login Success", "OK");
+            } else {
+                DisplayAlert("Login", "Login Fail", "OK");
+            }
 
-        //    if (db.login(UsernameEntry.Text, PasswordEntry.Text)) {
-        //        DisplayAlert("Login", "Login Success", "OK");
-        //    } else {
-        //        DisplayAlert("Login", "Login Fail", "OK");
-        //    }
-        //}
+        }
     }
 }
