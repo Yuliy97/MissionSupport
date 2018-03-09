@@ -40,6 +40,10 @@
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\MasterPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Model\FakeDatabase.cs" />
@@ -60,6 +64,9 @@
     </Compile>
     <Compile Include="View\MasterDetailMain.xaml.cs">
       <DependentUpon>MasterDetailMain.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\MasterPage.xaml.cs">
+      <DependentUpon>MasterPage.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
