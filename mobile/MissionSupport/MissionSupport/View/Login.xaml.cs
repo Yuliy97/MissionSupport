@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using MissionSupport.Model;
 
 using Xamarin.Forms;
 using MissionSupport.Model;
@@ -9,9 +10,13 @@ namespace MissionSupport.View
 {
     public partial class Login : ContentPage
     {
-        public Login()
+        private IDatabase database;
+
+        public Login(IDatabase database)
         {
             InitializeComponent();
+
+            this.database = database;
         }
 
         //void SignIn() {
