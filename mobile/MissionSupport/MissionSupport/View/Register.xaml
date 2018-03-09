@@ -20,6 +20,8 @@
 
             <Button x:Name = "RegisterButton" 
                     Clicked="RegisterButton_Clicked"
+                    BackgroundColor="Teal"
+                    TextColor="White"
                     Text="Register" />
         </StackLayout>
     </ContentPage.Content>
