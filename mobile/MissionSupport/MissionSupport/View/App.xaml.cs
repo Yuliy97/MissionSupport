@@ -9,7 +9,7 @@ namespace MissionSupport
         {
             InitializeComponent();
 
-            MainPage = new NavigationPage(new MissionSupportPage());
+            MainPage = new NavigationPage(new Welcome());
             //MainPage = new MissionSupportPage();
         }
 

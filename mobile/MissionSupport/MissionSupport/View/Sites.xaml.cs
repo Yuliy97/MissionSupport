@@ -5,9 +5,9 @@ using Xamarin.Forms;
 
 namespace MissionSupport.View
 {
-    public partial class MasterDetailMain : MasterDetailPage
+    public partial class Sites : ContentPage
     {
-        public MasterDetailMain()
+        public Sites()
         {
             InitializeComponent();
         }

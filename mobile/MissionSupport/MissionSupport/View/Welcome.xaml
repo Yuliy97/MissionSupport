@@ -1,6 +1,5 @@
-<?xml version="1.0" encoding="utf-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:MissionSupport" x:Class="MissionSupport.MissionSupportPage">    
-<!--    <Label Text="Mission Support" VerticalOptions="Center" HorizontalOptions="Center" FontSize="35" FontAttributes="Bold" TextColor="Teal"/> -->
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="MissionSupport.View.Welcome">
     <ContentPage.Content>
         <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
             <Label Text="Mission Support" 
@@ -31,4 +30,3 @@
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
-

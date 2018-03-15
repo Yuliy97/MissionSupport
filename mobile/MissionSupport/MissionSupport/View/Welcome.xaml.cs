@@ -1,23 +1,21 @@
-﻿using Xamarin.Forms;
+﻿using System;
+using System.Collections.Generic;
+using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
-using System;
 using MissionSupport.View;
 using MissionSupport.Model;
 
-namespace MissionSupport
+
+namespace MissionSupport.View
 {
-    [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class MissionSupportPage : ContentPage
+    public partial class Welcome : ContentPage
     {
         private IDatabase database;
-
-        public MissionSupportPage()
+        public Welcome()
         {
             InitializeComponent();
-
             database = new FakeDatabase();
         }
-
         private async void LoginButton_Clicked(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new Login(database));
@@ -30,7 +28,7 @@ namespace MissionSupport
 
         private void StartButton_Clicked(object sender, EventArgs e)
         {
-            
+
         }
     }
 }
