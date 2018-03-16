@@ -6,4 +6,5 @@
     <ContentPage.Content>
         <Label Text="About Page" TextColor="Teal" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"></Label>
     </ContentPage.Content>
+
 </ContentPage>
