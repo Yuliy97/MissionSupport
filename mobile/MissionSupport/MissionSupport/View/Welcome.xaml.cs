@@ -26,9 +26,9 @@ namespace MissionSupport.View
             await Navigation.PushAsync(new Register(database));
         }
 
-        private void StartButton_Clicked(object sender, EventArgs e)
+        private async void StartButton_Clicked(object sender, EventArgs e)
         {
-
+            await Navigation.PushAsync(new Main());
         }
     }
 }

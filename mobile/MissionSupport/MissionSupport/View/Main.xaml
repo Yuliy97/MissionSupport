@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MasterDetailPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:local="clr-namespace:MissionSupport.View"
+             x:Class="MissionSupport.View.Main"
+             Title="Mission Support" MasterBehavior="Popover" BackgroundColor="Teal">
+<MasterDetailPage.Master>  
+        <ContentPage Padding="10" BackgroundColor="Teal" Title="Menu">  
+            <ContentPage.Content>  
+                <StackLayout Margin="5,30,5,5">   
+                    <Button Text="Home" TextColor="Teal" BackgroundColor="White" Clicked="Home_Clicked"></Button>  
+                    <Button Text="Profile" TextColor="Teal" BackgroundColor="White" Clicked="Profile_Clicked"></Button>  
+                    <Button Text="Sites" TextColor="Teal" BackgroundColor="White" Clicked="Sites_Clicked"></Button>  
+                    <Button Text="Calendar" TextColor="Teal" BackgroundColor="White" Clicked="Calendar_Clickded"></Button>  
+                    <Button Text="About" TextColor="Teal" BackgroundColor="White" Clicked="About_Clickded"></Button>
+                </StackLayout>  
+            </ContentPage.Content>  
+        </ContentPage>  
+    </MasterDetailPage.Master> 
+    
+    <MasterDetailPage.Detail>  
+        <ContentPage Padding="10">  
+            <ContentPage.Content>  
+                <StackLayout Margin="5,30,5,5">  
+                    <Label Text="Detail Page"></Label>  
+                </StackLayout>  
+            </ContentPage.Content>  
+        </ContentPage>  
+    </MasterDetailPage.Detail> 
+    
+</MasterDetailPage>
