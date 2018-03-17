@@ -6,8 +6,9 @@
 <StackLayout>
     <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
         <Image Source="https://i.pinimg.com/originals/32/51/66/32516609fe86b53aa3b5748cf3c31e4a.jpg" 
-                HorizontalOptions="FillAndExpand"
-                VerticalOptions="FillAndExpand"
+               HorizontalOptions="FillAndExpand"
+               VerticalOptions="FillAndExpand"
+               Opacity="0.8"
                Aspect="AspectFill"
                />
 
