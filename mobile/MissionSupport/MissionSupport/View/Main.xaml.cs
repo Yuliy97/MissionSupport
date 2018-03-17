@@ -11,6 +11,7 @@ namespace MissionSupport.View
             InitializeComponent();
             Detail = new NavigationPage(new Home());
             IsPresented = false;
+            NavigationPage.SetHasNavigationBar(this, false);
         }
         private void Home_Clicked(object sender, EventArgs e)  
         {  
