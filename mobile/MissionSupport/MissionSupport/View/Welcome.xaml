@@ -1,32 +1,55 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="MissionSupport.View.Welcome">
-    <ContentPage.Content>
-        <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
-            <Label Text="Mission Support" 
-                    FontSize="40" 
-                    FontAttributes="Bold" 
-                    TextColor="Teal"/>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             x:Class="MissionSupport.View.Welcome">
 
-            <Button x:Name = "LoginButton"  
-                    Clicked = "LoginButton_Clicked" 
-                    Margin = "10,40,10,10"  
-                    Text="Login"
-                    TextColor="White"
-                    BackgroundColor="Teal"/>
+<StackLayout>
+    <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+        <Image Source="https://i.pinimg.com/originals/32/51/66/32516609fe86b53aa3b5748cf3c31e4a.jpg" 
+                HorizontalOptions="FillAndExpand"
+                VerticalOptions="FillAndExpand"
+               Aspect="AspectFill"
+               />
 
-            <Button x:Name = "RegisterButton"  
-                    Clicked = "RegisterButton_Clicked"  
-                    Margin = "10"  
-                    Text="Register"
-                    TextColor="White"
-                    BackgroundColor="Teal"/>
+       <StackLayout
+            RelativeLayout.WidthConstraint=
+              "{ConstraintExpression Type=RelativeToParent, Property=Width}"
+            RelativeLayout.HeightConstraint=
+              "{ConstraintExpression Type=RelativeToParent, Property=Height}">
+            <Frame OutlineColor="Accent" 
+                   WidthRequest="300" 
+                   BackgroundColor="#CCFFFFFF"
+                   HorizontalOptions="Center"
+                   VerticalOptions="CenterAndExpand">
+                <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
+                    <Label Text="Mission Support" 
+                            FontSize="40" 
+                            FontAttributes="Bold" 
+                            TextColor="Teal"/>
 
-            <Button x:Name = "StartButton"  
-                    Clicked = "StartButton_Clicked"  
-                    Margin = "10"  
-                    Text="Get Started"
-                    TextColor="White"
-                    BackgroundColor="Teal"/>
+                    <Button x:Name = "LoginButton"  
+                            Clicked = "LoginButton_Clicked" 
+                            Margin = "10,40,10,10"  
+                            Text="Login"
+                            TextColor="White"
+                            BackgroundColor="Teal"/>
+
+                    <Button x:Name = "RegisterButton"  
+                            Clicked = "RegisterButton_Clicked"  
+                            Margin = "10"  
+                            Text="Register"
+                            TextColor="White"
+                            BackgroundColor="Teal"/>
+
+                    <Button x:Name = "StartButton"  
+                            Clicked = "StartButton_Clicked"  
+                            Margin = "10"  
+                            Text="Get Started"
+                            TextColor="White"
+                            BackgroundColor="Teal"/>
+                </StackLayout>
+                </Frame>
         </StackLayout>
-    </ContentPage.Content>
+      </Grid>
+     </StackLayout>
 </ContentPage>

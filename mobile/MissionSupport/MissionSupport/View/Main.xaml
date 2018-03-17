@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
              xmlns:local="clr-namespace:MissionSupport.View"
              x:Class="MissionSupport.View.Main"
-             Title="Mission Support" MasterBehavior="Popover" BackgroundColor="Teal">
+             Title="Mission Support" MasterBehavior="Popover" >
 <MasterDetailPage.Master>  
         <ContentPage Padding="10" BackgroundColor="Teal" Title="Menu">  
             <ContentPage.Content>  

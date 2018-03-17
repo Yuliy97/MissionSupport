@@ -10,6 +10,7 @@ namespace MissionSupport.View
         public About()
         {
             InitializeComponent();
+
         }
     }
 }
