@@ -8,8 +8,8 @@
         <Grid VerticalOptions="FillAndExpand">
             <maps:Map x:Name="SitesMap"
                 VerticalOptions="FillAndExpand"
-                IsShowingUser="true" 
-                MapType="Hybrid"
+                IsShowingUser="false"
+            MapType="Hybrid"
             />
         </Grid>
     </StackLayout>
