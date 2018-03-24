@@ -1,8 +1,41 @@
 <sebm-google-map
      [latitude]="lat"
      [longitude]="lng">
-  <sebm-google-map-marker
-     [latitude]="lat"
-     [longitude]="lng">
-   </sebm-google-map-marker>
 </sebm-google-map>
+
+<!-- Button trigger modal -->
+<div class="container">
+  <button type="button" id="open_modal" class="btn btn-primary" data-toggle="modal" data-target="#site_modal">Add a site</button>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="site_modal" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Site Information</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <label>Site name
+          <input type="text" id="site_name" class="form-control">
+        </label>
+        <label>Address
+          <input type="text" id="site_address" class="form-control">
+        </label>
+        <label>Date
+          <form #myForm="ngForm" novalidate>
+            <my-date-picker id="site_date" name="mydate" [options]="myDatePickerOptions"
+                    [(ngModel)]="model" required></my-date-picker>
+          </form>
+        </label>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button (click)="on_add()" type="button" id="add_site" class="btn btn-primary">Submit</button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -13,6 +13,7 @@ import { ProfileComponent } from './components/profile/profile.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { AboutComponent } from './components/about/about.component';
 import { AgmCoreModule } from 'angular2-google-maps/core';
+import { MyDatePickerModule } from 'mydatepicker';
 
 import { AuthService } from './services/auth.service';
 import { ValidateService } from './services/validate.service';
@@ -55,7 +56,8 @@ const googleMapsCore = AgmCoreModule.forRoot({
     HttpModule,
     RouterModule.forRoot(appRoutes),
     FlashMessagesModule,
-    googleMapsCore
+    googleMapsCore,
+    MyDatePickerModule
   ],
   providers: [ValidateService, AuthService, AuthGuard],
   bootstrap: [AppComponent]

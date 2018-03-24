@@ -17,4 +17,11 @@ export class ValidateService {
     return re.test(String(email).toLowerCase());
   }
 
+  validate_site(site) {
+    if (site.site_name == undefined || site.site_address == undefined || site.site_date == undefined) {
+      return false;
+    }
+    return true;
+  }
+
 }
