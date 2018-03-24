@@ -21,14 +21,14 @@
       </div>
       <div class="modal-body">
         <label>Site name
-          <input type="text" id="site_name" class="form-control">
+          <input type="text" [(ngModel)]="site_name" name="site_name" class="form-control">
         </label>
         <label>Address
-          <input type="text" id="site_address" class="form-control">
+          <input type="text" [(ngModel)]="site_address" name="site_address" class="form-control">
         </label>
         <label>Date
           <form #myForm="ngForm" novalidate>
-            <my-date-picker id="site_date" name="mydate" [options]="myDatePickerOptions"
+            <my-date-picker [(ngModel)]="site_date" name="site_date" [options]="myDatePickerOptions"
                     [(ngModel)]="model" required></my-date-picker>
           </form>
         </label>

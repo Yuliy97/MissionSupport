@@ -20,6 +20,7 @@ mongoose.connection.on('error', function(err) {
 
 const app = express();
 const users = require('./routes/users');
+const sites = require('./routes/sites');
 
 const port = 3000;
 
@@ -31,7 +32,9 @@ app.use(express.static(path.join(__dirname, 'client')));
 
 // Enable body parser MW here
 app.use(bparse.json());
+
 app.use('/users', users);
+app.use('/sites', sites);
 
 // Enable passport MW here
 app.use(passport.initialize());

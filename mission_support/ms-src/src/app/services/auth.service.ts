@@ -7,9 +7,11 @@ import 'rxjs/add/operator/map';
 export class AuthService {
   authToken: any;
   user: any;
+  site: any;
 
   constructor(private http: Http) { }
 
+  //User auth
   register_user(user) {
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
@@ -57,5 +59,12 @@ export class AuthService {
     this.authToken = null;
     this.user = null;
     localStorage.clear();
+  }
+
+  //Site auth
+  create_site(site) {
+    let headers = new Headers();
+    headers.append('Content-Type', 'application/json');
+    return this.http.post('http://localhost:3000/sites/create', site, {headers: headers}).map(res => res.json());
   }
 }

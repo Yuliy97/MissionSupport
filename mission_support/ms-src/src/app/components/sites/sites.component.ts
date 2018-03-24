@@ -21,8 +21,6 @@ export class SitesComponent implements OnInit {
     selectionTxtFontSize: '15px'
   };
 
-  private placeholder: string = 'Select a date';
-
   constructor(
     private validate_service: ValidateService,
     private flash_message: FlashMessagesService,
@@ -41,9 +39,18 @@ export class SitesComponent implements OnInit {
     }
 
     if (!this.validate_service.validate_site(site)) {
+      console.log(site);
       alert("Please fill in all the fields");
       return false;
     }
+
+    this.auth_service.create_site(site).subscribe(data => {
+      if (data.success) {
+        alert("You have successfully created a site");
+      } else {
+        alert("Something went wrong");
+      }
+    });
   }
 
 }
