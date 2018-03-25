@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
              x:Class="MissionSupport.View.About"
              Title="About">
-    <StackLayout>
+   <StackLayout>
     <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
         <Image Source="https://i.pinimg.com/originals/32/51/66/32516609fe86b53aa3b5748cf3c31e4a.jpg" 
                HorizontalOptions="FillAndExpand"
@@ -12,33 +12,51 @@
                Aspect="AspectFill"
                />
 
-       <StackLayout
+        <StackLayout
             RelativeLayout.WidthConstraint=
               "{ConstraintExpression Type=RelativeToParent, Property=Width}"
             RelativeLayout.HeightConstraint=
               "{ConstraintExpression Type=RelativeToParent, Property=Height}">
+            <ScrollView>
+            
             <Frame OutlineColor="Accent" 
                    WidthRequest="300" 
                    BackgroundColor="#CCFFFFFF"
                    HorizontalOptions="Center"
-                   VerticalOptions="CenterAndExpand">
+                   VerticalOptions="CenterAndExpand" >
                 <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
                     <Label Text="Mission Support" 
                             FontSize="40" 
                             FontAttributes="Bold" 
                             TextColor="Teal"/>
 
-                     <Label Text="About Page!" 
+                     <Label Text="Our Vision" 
                             TextColor="Teal" 
-                            FontSize="25"
-                            HorizontalTextAlignment="Center" 
-                            VerticalTextAlignment="Center"
-                            Margin = "10,40,10,10" ></Label>
+                            FontSize="40"
+                            HorizontalTextAlignment="Center"
+                            Margin = "10,40,10,10" />
 
+                     <Label Text="&quot; Helping connect groups that are helping others &quot;" 
+                            FontSize="30"
+                            HorizontalTextAlignment="Center" />
+                        
+                     <Label Text="There is currently no global platform available for medical organizations to share information or resources despite many visiting the same areas. Problems that result from this lack of cooperation include resource loss and individual medical organizations expending time to build institutional knowledge from the ground up. Resources are lost either going through customs or when extra medical supplies are confiscated by local governments and then have to be bought by proceeding medical organizations. Our goal is to provide a successful solution that would allow for an exchange of information and a hub for communication through web and mobile support." ></Label>
 
-         
+                     <Label Text="Our Client"
+                            FontSize="30"
+                            HorizontalTextAlignment="Center" />
+
+                     <Label Text="Vikas N. O'Reilly-Shah, MD, PhD, is Assistant Professor of Anesthesiology at Emory University School of Medicine and Children's Healthcare of Atlanta. His clinical expertise and research interests include perioperative outcomes and management, applications of technology for the improvement of resident and fellow education, and leveraging modern electronic medical records for research and quality improvement. After obtaining his MD and PhD in Biochemistry from Vanderbilt University, he completed anesthesiology residency and pediatric anesthesiology fellowship training at Stanford University and Lucille Packard Children's Hospital. In addition to his clinical work, he leads his departmental data governance and mining efforts. He is an app developer and has published two medical apps with global reach that have been downloaded more than 300,000 times, and has published several papers in the area of mHealth based on this work. He was recently appointed as an American Board of Anesthesiology Part 2 (Oral) Board Examiner and to the American Society of Anesthesiology Committee on Electronic Media and Information Technology."></Label>
+
+                     <Label Text="About Us"
+                            FontSize="30"
+                            HorizontalTextAlignment="Center" />
+
+                     <Label Text="We are a team of 6 students from Georgia Tech" 
+                            HorizontalTextAlignment="Center" />
                 </StackLayout>
                 </Frame>
+                </ScrollView>
         </StackLayout>
       </Grid>
      </StackLayout>
