@@ -21,4 +21,16 @@ router.post('/create', function(req, res, next) {
 
 });
 
+//Get sites
+router.get('/all_sites', function(req, res) {
+  const query = Site.find({});
+  query.exec(function(err, sites) {
+    if (err) {
+      res.send(err);
+    } else {
+      res.json(sites);
+    }
+  });
+});
+
 module.exports = router;

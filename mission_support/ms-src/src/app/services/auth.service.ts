@@ -67,4 +67,10 @@ export class AuthService {
     headers.append('Content-Type', 'application/json');
     return this.http.post('http://localhost:3000/sites/create', site, {headers: headers}).map(res => res.json());
   }
+
+  get_all_sites() {
+    let headers = new Headers();
+    headers.append('Content-Type', 'application/json');
+    return this.http.get('http://localhost:3000/sites/all_sites', {headers: headers}).map(res => res.json());
+  }
 }

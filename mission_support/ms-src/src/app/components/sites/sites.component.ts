@@ -1,15 +1,23 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Injectable, OnInit, NgZone } from '@angular/core';
 import { ValidateService } from '../../services/validate.service';
 import { AuthService } from '../../services/auth.service';
 import { FlashMessagesService } from 'angular2-flash-messages/module';
 import { IMyDpOptions } from 'mydatepicker';
+import { Observable, Observer } from 'rxjs';
+import { MapsAPILoader } from 'angular2-google-maps/core';
+import { GoogleMapsAPIWrapper } from 'angular2-google-maps/core';
+import { GMapsService } from '../../services/google-maps.service'
 
+declare var google: any;
+var markers = [];
 
 @Component({
   selector: 'app-sites',
   templateUrl: './sites.component.html',
   styleUrls: ['./sites.component.css']
 })
+
+@Injectable()
 export class SitesComponent implements OnInit {
 
   site_name: String;
@@ -24,14 +32,30 @@ export class SitesComponent implements OnInit {
   constructor(
     private validate_service: ValidateService,
     private flash_message: FlashMessagesService,
-    private auth_service: AuthService
-  ) { }
+    private auth_service: AuthService,
+  ) {  }
   lat: number = 33.7490;
   lng: number = -84.3880;
   ngOnInit() {
+    this.auth_service.get_all_sites().subscribe(data => {
+      console.log(data);
+      for (var i = 0; i < data.length; i++) {
+        var addr = data[i].site_address;
+        markers.push(addr);
+      }
+    });
   }
 
+  // convert_markers() {
+  //   for (var i = 0; i < markers.length; i++) {
+  //     markers[i] = this.getGeocoding(markers[i]);
+  //     console.log(markers);
+  //   }
+  // }
+
   on_add() {
+    // this.convert_markers();
+    //console.log(markers[2].geometry.location)
     const site = {
       site_name: this.site_name,
       site_address: this.site_address,
@@ -52,5 +76,4 @@ export class SitesComponent implements OnInit {
       }
     });
   }
-
 }
