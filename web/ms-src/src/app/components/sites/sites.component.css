@@ -1,5 +1,6 @@
 .sebm-google-map-container {
-  height: 500px;
+  height: 600px;
+  width: 1050px;
 }
 
 .container {
@@ -9,5 +10,5 @@
 }
 
 label, input {
-  display: block;
+  display: block
 }

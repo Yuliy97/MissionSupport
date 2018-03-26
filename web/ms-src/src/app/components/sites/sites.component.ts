@@ -24,7 +24,7 @@ export class SitesComponent implements OnInit {
   site_name: String;
   site_address: String;
   site_date: String;
-  mkers: any[];
+  makers: any[];
 
   myDatePickerOptions: IMyDpOptions = {
     dateFormat: 'mm.dd.yyyy',
@@ -59,6 +59,8 @@ export class SitesComponent implements OnInit {
                     this.lng = result.lng();
                     const mylatlng = {lat: this.lat, lng: this.lng};
                     markers.push(mylatlng);
+
+
                 })
             },
           error => console.log(error),
