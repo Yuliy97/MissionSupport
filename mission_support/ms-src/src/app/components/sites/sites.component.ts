@@ -8,7 +8,6 @@ import { MapsAPILoader } from 'angular2-google-maps/core';
 import { GoogleMapsAPIWrapper } from 'angular2-google-maps/core';
 import { GMapsService } from '../../services/google-maps.service'
 
-declare var google: any;
 var markers = [];
 
 @Component({
