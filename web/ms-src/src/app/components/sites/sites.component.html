@@ -1,16 +1,18 @@
-<sebm-google-map
-     [latitude]="lat"
-     [longitude]="lng"
-     [zoom]="3">
-     <sebm-google-map-marker
-         *ngFor="let marker of updated_markers"
+<sebm-google-map #gm [latitude]="lat" [longitude]="lng" [zoom]="3">
+     <sebm-google-map-marker *ngFor="let marker of updated_markers; let i = index"
          [latitude]="marker.lat"
-         [longitude]="marker.lng">
+         [longitude]="marker.lng"
+         (markerClick)="gm.lastOpen?.close(); gm.lastOpen = info_window">
+         <sebm-google-map-info-window #info_window>
+             <h1>{{site_names[i].name}}</h1>
+             <br>
+             <strong>Created on: {{site_names[i].date}}</strong>
+         </sebm-google-map-info-window>
      </sebm-google-map-marker>
 </sebm-google-map>
 
 <div class="container">
-  <button *ngIf="auth_service.loggedIn()" type="button" id="open_modal" class="btn btn-primary" data-toggle="modal" data-target="#site_modal">Add a site</button>
+  <button type="button" *ngIf="auth_service.loggedIn()" id="open_modal" class="btn btn-primary" data-toggle="modal" data-target="#site_modal">Add a site</button>
 </div>
 
 <div class="modal fade" id="site_modal" tabindex="-1" role="dialog" aria-hidden="true">

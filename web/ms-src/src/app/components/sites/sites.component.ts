@@ -9,6 +9,7 @@ import { GoogleMapsAPIWrapper } from 'angular2-google-maps/core';
 import { GMapsService } from '../../services/google-maps.service';
 
 var markers = [];
+var names = [];
 
 @Component({
   selector: 'app-sites',
@@ -23,7 +24,7 @@ export class SitesComponent implements OnInit {
 
   site_name: String;
   site_address: String;
-  site_date: String;
+  created_on: String;
 
   myDatePickerOptions: IMyDpOptions = {
     dateFormat: 'mm.dd.yyyy',
@@ -49,6 +50,7 @@ export class SitesComponent implements OnInit {
       console.log(data);
       for (var i = 0; i < data.length; i++) {
         var addr = data[i].site_address;
+        names.push({name: data[i].site_name, date: data[i].created_on});
         this.gm_service.getLatLan(addr)
         .subscribe(
             result => {
@@ -67,11 +69,12 @@ export class SitesComponent implements OnInit {
   }
 
   on_add() {
-    console.log(markers);
+    this.load_markers();
+    console.log(this.site_names);
     const site = {
       site_name: this.site_name,
       site_address: this.site_address,
-      site_date: this.site_date
+      created_on: this.created_on
     }
 
     if (!this.validate_service.validate_site(site)) {
@@ -89,4 +92,5 @@ export class SitesComponent implements OnInit {
   }
 
   updated_markers = markers;
+  site_names = names;
 }
