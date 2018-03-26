@@ -10,7 +10,7 @@
 </sebm-google-map>
 
 <div class="container">
-  <button type="button" id="open_modal" class="btn btn-primary" data-toggle="modal" data-target="#site_modal">Add a site</button>
+  <button *ngIf="auth_service.loggedIn()" type="button" id="open_modal" class="btn btn-primary" data-toggle="modal" data-target="#site_modal">Add a site</button>
 </div>
 
 <div class="modal fade" id="site_modal" tabindex="-1" role="dialog" aria-hidden="true">
