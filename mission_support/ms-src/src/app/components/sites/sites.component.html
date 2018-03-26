@@ -2,6 +2,11 @@
      [latitude]="lat"
      [longitude]="lng"
      [zoom]="3">
+     <sebm-google-map-marker
+         *ngFor="let marker of ms"
+         [latitude]="marker.latitude"
+         [longitude]="marker.longitude">
+     </sebm-google-map-marker>
 </sebm-google-map>
 
 <!-- Button trigger modal -->

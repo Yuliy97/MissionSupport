@@ -6,7 +6,7 @@ import { Observable, Observer } from 'rxjs';
 declare var google: any;
 
 @Injectable()
-export class GMapsService extends GoogleMapsAPIWrapper{
+export class GMapsService extends GoogleMapsAPIWrapper {
     constructor(private __loader: MapsAPILoader, private __zone: NgZone) {
         super(__loader, __zone);
     }
