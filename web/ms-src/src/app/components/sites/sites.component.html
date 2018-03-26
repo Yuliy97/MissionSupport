@@ -4,9 +4,9 @@
          [longitude]="marker.lng"
          (markerClick)="gm.lastOpen?.close(); gm.lastOpen = info_window">
          <sebm-google-map-info-window #info_window>
-             <h1>{{site_names[i].name}}</h1>
+             <h1>{{site_info[i].name}}</h1>
              <br>
-             <strong>Created on: {{site_names[i].date}}</strong>
+             <strong>Created on: {{site_info[i].date}}</strong>
          </sebm-google-map-info-window>
      </sebm-google-map-marker>
 </sebm-google-map>

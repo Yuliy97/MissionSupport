@@ -70,7 +70,7 @@ export class SitesComponent implements OnInit {
 
   on_add() {
     this.load_markers();
-    console.log(this.site_names);
+    console.log(this.site_info);
     const site = {
       site_name: this.site_name,
       site_address: this.site_address,
@@ -92,5 +92,5 @@ export class SitesComponent implements OnInit {
   }
 
   updated_markers = markers;
-  site_names = names;
+  site_info = names;
 }
