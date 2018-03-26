@@ -6,7 +6,7 @@ import { IMyDpOptions } from 'mydatepicker';
 import { Observable, Observer } from 'rxjs';
 import { MapsAPILoader } from 'angular2-google-maps/core';
 import { GoogleMapsAPIWrapper } from 'angular2-google-maps/core';
-import { GMapsService } from '../../services/google-maps.service'
+import { GMapsService } from '../../services/google-maps.service';
 
 var markers = [];
 
@@ -19,12 +19,11 @@ var markers = [];
 @Injectable()
 export class SitesComponent implements OnInit {
 
-  ms = [ {lat: 24, lng: -84} ];
+  markers = [];
 
   site_name: String;
   site_address: String;
   site_date: String;
-  makers: any[];
 
   myDatePickerOptions: IMyDpOptions = {
     dateFormat: 'mm.dd.yyyy',
@@ -38,7 +37,6 @@ export class SitesComponent implements OnInit {
     private gm_service: GMapsService,
     private __zone: NgZone
   ) {
-    //this.load_markers();
   }
   lat: number = 33.7490;
   lng: number = -84.3880;
@@ -59,8 +57,6 @@ export class SitesComponent implements OnInit {
                     this.lng = result.lng();
                     const mylatlng = {lat: this.lat, lng: this.lng};
                     markers.push(mylatlng);
-
-
                 })
             },
           error => console.log(error),
@@ -71,7 +67,6 @@ export class SitesComponent implements OnInit {
   }
 
   on_add() {
-    //this.load_markers();
     console.log(markers);
     const site = {
       site_name: this.site_name,
@@ -92,4 +87,6 @@ export class SitesComponent implements OnInit {
       }
     });
   }
+
+  updated_markers = markers;
 }

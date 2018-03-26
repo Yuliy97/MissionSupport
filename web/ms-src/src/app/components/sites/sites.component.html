@@ -3,15 +3,11 @@
      [longitude]="lng"
      [zoom]="3">
      <sebm-google-map-marker
-         *ngFor="let marker of markers | json"
+         *ngFor="let marker of updated_markers"
          [latitude]="marker.lat"
          [longitude]="marker.lng">
      </sebm-google-map-marker>
 </sebm-google-map>
-
-<ul>
-    <li *ngFor="let marker of markers">{{marker}}</li>
-</ul>
 
 <div class="container">
   <button *ngIf="auth_service.loggedIn()" type="button" id="open_modal" class="btn btn-primary" data-toggle="modal" data-target="#site_modal">Add a site</button>
