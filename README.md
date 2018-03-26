@@ -16,12 +16,12 @@ Clone Repository to local machine
 
 `npm install -g @angular/cli`
 
-`npm install` in MissionSupport/mission_support
+`npm install` in MissionSupport/web
 
-`npm install` in MissionSupport/mission_support/ms-src
+`npm install` in MissionSupport/web/ms-src
 
-first terminal window: cd into MissionSupport/mission_support and type 'nodemon'
+first terminal window: cd into MissionSupport/web and type 'nodemon'
 
-second terminal window: cd into MissionSupport/mission_support/ms-src and type 'ng serve'
+second terminal window: cd into MissionSupport/web/ms-src and type 'ng serve'
 
 go into browser window and http://localhost:4200
