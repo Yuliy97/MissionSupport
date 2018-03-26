@@ -3,18 +3,16 @@
      [longitude]="lng"
      [zoom]="3">
      <sebm-google-map-marker
-         *ngFor="let marker of markers"
-         [latitude]="marker.latitude"
-         [longitude]="marker.longitude">
+         *ngFor="let marker of markers; let i = index"
+         [latitude]="marker.lat"
+         [longitude]="marker.lng">
      </sebm-google-map-marker>
 </sebm-google-map>
 
-<!-- Button trigger modal -->
 <div class="container">
   <button type="button" id="open_modal" class="btn btn-primary" data-toggle="modal" data-target="#site_modal">Add a site</button>
 </div>
 
-<!-- Modal -->
 <div class="modal fade" id="site_modal" tabindex="-1" role="dialog" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
