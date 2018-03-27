@@ -11,8 +11,9 @@ body {
   background-size: cover;
   min-height: 100%;
   overflow: hidden;
-  height: calc(100vh - 8em);
-  padding: 3em;
+  height: calc(100vh - 20em);
+  padding: 2em;
+  margin: 0px;
 }
 
 .line-1{
