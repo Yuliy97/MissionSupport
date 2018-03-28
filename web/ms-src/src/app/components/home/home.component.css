@@ -1,5 +1,10 @@
+#card {
+  margin-top: 5%;
+}
+
 .jumbotron {
   margin-top: 5%;
+  font-family: 'Avenir';
 }
 
 .card:hover {
@@ -11,7 +16,7 @@ body {
   background-size: cover;
   min-height: 100%;
   overflow: hidden;
-  height: calc(100vh - 20em);
+  height: calc(100vh - 30em);
   padding: 2em;
   margin: 0px;
 }
