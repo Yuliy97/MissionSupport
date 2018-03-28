@@ -18,7 +18,7 @@ export class ValidateService {
   }
 
   validate_site(site) {
-    if (site.site_name == undefined || site.site_address == undefined || site.site_date == undefined) {
+    if (site.site_name == undefined || site.site_address == undefined || site.created_on == undefined) {
       return false;
     }
     return true;

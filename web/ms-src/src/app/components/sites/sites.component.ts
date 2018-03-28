@@ -24,7 +24,7 @@ export class SitesComponent implements OnInit {
 
   site_name: String;
   site_address: String;
-  created_on: String;
+  created_on: Date;
 
   myDatePickerOptions: IMyDpOptions = {
     dateFormat: 'mm.dd.yyyy',
@@ -76,6 +76,10 @@ export class SitesComponent implements OnInit {
       site_address: this.site_address,
       created_on: this.created_on
     }
+
+    console.log(this.site_name);
+    console.log(this.site_address);
+    console.log(this.created_on);
 
     if (!this.validate_service.validate_site(site)) {
       alert("Please fill in all the fields");
