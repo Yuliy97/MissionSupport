@@ -2,13 +2,18 @@
 using System.Collections.Generic;
 using Xamarin.Forms;
 
+using MissionSupport.Model;
+
 namespace MissionSupport.View
 {
     public partial class Main : MasterDetailPage
     {
-        public Main()
+        private IDatabase database;
+
+        public Main(IDatabase database)
         {
             InitializeComponent();
+            this.database = database;
             Detail = new NavigationPage(new Home());
             IsPresented = false;
             NavigationPage.SetHasNavigationBar(this, false);
@@ -26,7 +31,7 @@ namespace MissionSupport.View
   
         private void Sites_Clicked(object sender, EventArgs e)  
         {  
-            Detail = new NavigationPage(new Sites());  
+            Detail = new NavigationPage(new Sites(database));  
             IsPresented = false;  
         }  
         private void Calendar_Clickded(object sender, EventArgs e)  

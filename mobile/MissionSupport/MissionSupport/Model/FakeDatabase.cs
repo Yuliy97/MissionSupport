@@ -4,36 +4,72 @@ namespace MissionSupport.Model
 {
     class FakeDatabase : IDatabase
     {
-        private Dictionary<string, User> users;
+        private Dictionary<string, User> usersByEmail;
+        private Dictionary<string, User> usersByUsername;
 
         // not stored in user class since we should be hashing password
         // and sending hash to the database for authentication
-        private Dictionary<string, string> passwords;
+        private Dictionary<string, string> passwordsByEmail;
+
+        private Dictionary<string, Site> sitesByName;
 
         public FakeDatabase()
         {
-            users = new Dictionary<string, User>();
-            passwords = new Dictionary<string, string>();
+            usersByUsername = new Dictionary<string, User>();
+            usersByEmail = new Dictionary<string, User>();
+            passwordsByEmail = new Dictionary<string, string>();
+            sitesByName = new Dictionary<string, Site>();
         }
 
-        public bool userExists(string email)
+        public User getUserByUsername(string username)
         {
-            return users.ContainsKey(email);
+            if (usersByUsername.ContainsKey(username)) {
+                return usersByUsername[username];
+            }
+            return null;
+        }
+
+        public User getUserByEmail(string email)
+        {
+            if (usersByEmail.ContainsKey(email)) {
+                return usersByEmail[email];
+            }
+            return null;
+        }
+
+        public Site getSiteByName(string name)
+        {
+            if (sitesByName.ContainsKey(name)) {
+                return sitesByName[name];
+            }
+            return null;
         }
 
         public bool login(string email, string password)
         {
-            return passwords.ContainsKey(email) && passwords[email] == password;
+            return passwordsByEmail.ContainsKey(email) && passwordsByEmail[email] == password;
         }
 
-        public bool createUser(User user, string password)
+        public bool addUser(User user, string password)
         {
-            if (users.ContainsKey(user.Email)) {
+            if (usersByEmail.ContainsKey(user.Email) || usersByUsername.ContainsKey(user.UserName)) {
                 return false;
             }
 
-            users.Add(user.Email, user);
-            passwords.Add(user.Email, password);
+            usersByEmail.Add(user.Email, user);
+            usersByUsername.Add(user.UserName, user);
+            passwordsByEmail.Add(user.Email, password);
+
+            return true;
+        }
+
+        public bool addSite(Site site)
+        {
+            if (sitesByName.ContainsKey(site.Name)) {
+                return false;
+            }
+
+            sitesByName.Add(site.Name, site);
 
             return true;
         }

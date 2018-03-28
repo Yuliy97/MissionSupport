@@ -2,12 +2,19 @@
 {
     public interface IDatabase
     {
-        bool userExists(string email);
+        User getUserByUsername(string username);
+
+        User getUserByEmail(string email);
+
+        Site getSiteByName(string name);
 
         // return login success
         bool login(string email, string password);
 
-        // return user creation was success
-        bool createUser(User user, string password);
+        // return user creation success
+        bool addUser(User user, string password);
+
+        // return site creation success
+        bool addSite(Site site);
     }
 }
