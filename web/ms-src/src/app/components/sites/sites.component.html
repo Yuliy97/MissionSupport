@@ -31,6 +31,9 @@
         <label>Address
           <input type="text" [(ngModel)]="site_address" name="site_address" class="form-control">
         </label>
+        <label>Organization
+          <input type="text" [(ngModel)]="site_organization" name="site_organization" class="form-control">
+        </label>
         <label>Date
           <form #myForm="ngForm" novalidate>
             <my-date-picker [(ngModel)]="created_on" name="created_on" [options]="myDatePickerOptions"

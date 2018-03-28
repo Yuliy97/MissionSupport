@@ -24,6 +24,7 @@ export class SitesComponent implements OnInit {
 
   site_name: String;
   site_address: String;
+  site_organization: String;
   created_on: Date;
 
   myDatePickerOptions: IMyDpOptions = {
@@ -50,7 +51,7 @@ export class SitesComponent implements OnInit {
       console.log(data);
       for (var i = 0; i < data.length; i++) {
         var addr = data[i].site_address;
-        names.push({name: data[i].site_name, date: data[i].created_on});
+        names.push({name: data[i].site_name, organization: data[i].site_organization, date: data[i].created_on});
         this.gm_service.getLatLan(addr)
         .subscribe(
             result => {
@@ -74,11 +75,13 @@ export class SitesComponent implements OnInit {
     const site = {
       site_name: this.site_name,
       site_address: this.site_address,
+      site_organization: this.site_organization,
       created_on: this.created_on
     }
 
     console.log(this.site_name);
     console.log(this.site_address);
+    console.log(this.site_organization);
     console.log(this.created_on);
 
     if (!this.validate_service.validate_site(site)) {
