@@ -38,6 +38,10 @@ const user_schema = mongoose.Schema({
       message: 'Email already exists!'
     }
   },
+  organization: {
+    type: String,
+    required: false
+  },
   password: {
     type: String,
     required: true

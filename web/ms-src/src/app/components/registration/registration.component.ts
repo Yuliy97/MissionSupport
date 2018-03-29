@@ -15,6 +15,7 @@ export class RegistrationComponent implements OnInit {
   last_name: String;
   username: String;
   email: String;
+  organization: String;
   password: String;
 
   constructor(
@@ -33,6 +34,7 @@ export class RegistrationComponent implements OnInit {
       last_name: this.last_name,
       username: this.username,
       email: this.email,
+      organization: this.organization,
       password: this.password
     }
 
