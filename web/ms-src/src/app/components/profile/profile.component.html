@@ -1,7 +1,36 @@
-<div *ngIf="user">
-  <h2 class="page-header">{{user.name}}</h2>
-  <ul class="list-group">
-    <li class="list-group-item">Username: {{user.username}}</li>
-    <li class="list-group-item">Email: {{user.email}}</li>  
-  </ul>
+<div class="container">
+    <h1>Profile</h1>
+  	<hr>
+	<div class="row">
+      <!-- left column -->
+      <div class="col-md-3">
+        <div class="text-center">
+          <img src="//placehold.it/100" class="avatar img-circle" alt="avatar">
+          <h6>Upload a different photo...</h6>
+
+          <input type="file" class="form-control">
+        </div>
+      </div>
+      <!-- edit form column -->
+      <div class="col-md-9 personal-info">
+        <h3>Personal info</h3>
+        <div *ngIf="user">
+     		<ul class="list-group">
+        		<li class="list-group-item">First Name: {{user.first_name}}</li>
+                <li class="list-group-item">Last Name: {{user.last_name}}</li>
+        		<li class="list-group-item">Username: {{user.username}}</li>
+        		<li class="list-group-item">Email: {{user.email}}</li>
+      		</ul>
+            <br>
+            <h3>Organization</h3>
+            <div class="form-group">
+                <input type="text" class="form-control" [(ngModel)]="organization" name="organization" placeholder="Enter organization">
+            </div>
+            <div class="col-md-8">
+              <input type="button" class="btn btn-primary" value="Save Changes">
+            </div>
+		</div>
+      </div>
+  </div>
 </div>
+<hr>
