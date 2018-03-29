@@ -8,6 +8,7 @@ router.post('/create', function(req, res, next) {
   let new_site = new Site({
     site_name: req.body.site_name,
     site_address: req.body.site_address,
+    site_organization: req.body.site_organization,
     created_on: req.body.site_date
   });
 
