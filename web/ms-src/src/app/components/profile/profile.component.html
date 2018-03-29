@@ -20,12 +20,9 @@
                 <li class="list-group-item">Last Name: {{user.last_name}}</li>
         		<li class="list-group-item">Username: {{user.username}}</li>
         		<li class="list-group-item">Email: {{user.email}}</li>
+                <li class="list-group-item">Email: {{user.organization}}</li>
       		</ul>
             <br>
-            <h3>Organization</h3>
-            <div class="form-group">
-                <input type="text" class="form-control" [(ngModel)]="organization" name="organization" placeholder="Enter organization">
-            </div>
             <div class="col-md-8">
               <input type="button" class="btn btn-primary" value="Save Changes">
             </div>
