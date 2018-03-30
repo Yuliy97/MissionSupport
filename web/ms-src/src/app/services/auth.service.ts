@@ -8,6 +8,7 @@ export class AuthService {
   authToken: any;
   user: any;
   site: any;
+  administrator: boolean;
 
   constructor(private http: Http) { }
 
@@ -34,9 +35,18 @@ export class AuthService {
       return tokenNotExpired('id_token');
   }
 
-  //TO DO: HOW DO I GET THIS TO ONLY GIVE TOKEN TO USERS WHO HAVE USER_TYPE: Admin? HELP :,(
   isAdmin() {
-      return tokenNotExpired('id_token');
+    if(this.administrator == true) {
+        return tokenNotExpired('id_token');
+    }
+  }
+
+  store_Admin(token, user) {
+      localStorage.setItem('id_token', token);
+      localStorage.setItem('user', JSON.stringify(user));
+      this.authToken = token;
+      this.user = user;
+      this.administrator = true;
   }
 
   get_profile() {
