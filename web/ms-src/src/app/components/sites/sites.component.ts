@@ -46,6 +46,16 @@ export class SitesComponent implements OnInit {
     this.load_markers();
   }
 
+  containsObject(obj, list) {
+    var i;
+    for (i = 0; i < list.length; i++) {
+        if (list[i] === obj) {
+            return true;
+        }
+    }
+    return false;
+  }
+
   load_markers() {
     this.auth_service.get_all_sites().subscribe(data => {
       console.log(data);
@@ -59,7 +69,9 @@ export class SitesComponent implements OnInit {
                     this.lat = result.lat();
                     this.lng = result.lng();
                     const mylatlng = {lat: this.lat, lng: this.lng};
-                    markers.push(mylatlng);
+                    if (!containsObject(mylatlng, markers)) {
+                      markers.push(mylatlng);
+                    }
                 })
             },
           error => console.log(error),

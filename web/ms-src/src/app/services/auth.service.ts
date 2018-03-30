@@ -47,7 +47,7 @@ export class AuthService {
       this.authToken = token;
       this.user = user;
       this.administrator = true;
-      localStorage.setItem('admin', "true");
+      localStorage.setItem('admin', 'true');
   }
 
   get_profile() {
