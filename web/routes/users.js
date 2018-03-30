@@ -71,6 +71,11 @@ router.get('/profile', passport.authenticate('jwt', {session: false}), function(
   res.json({user: req.user});
 });
 
+// Admin
+router.get('/admin', passport.authenticate('jwt', {session: false}), function(req, res, next) {
+  res.json({user: req.user});
+});
+
 // Reset
 router.post('/reset', function(req, res, next) {
   const email = req.body.email;

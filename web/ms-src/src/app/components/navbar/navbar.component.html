@@ -20,6 +20,9 @@
       <li *ngIf="auth_service.loggedIn()" [routerLinkActive] = "['active']" [routerLinkActiveOptions] = "{exact:true}" class="nav-item active">
         <button type="button" class="btn btn-primary" [routerLink] = "['/profile']">Profile</button>
       </li>
+      <li *ngIf="auth_service.loggedIn()" [routerLinkActive] = "['active']" [routerLinkActiveOptions] = "{exact:true}" class="nav-item active">
+        <button type="button" class="btn btn-primary" [routerLink] = "['/admin']">Admin</button>
+      </li>
       <li *ngIf="!auth_service.loggedIn()" [routerLinkActive] = "['active']" [routerLinkActiveOptions] = "{exact:true}" class="nav-item active">
         <button type="button" class="btn btn-primary" [routerLink] = "['/login']">Login</button>
       </li>

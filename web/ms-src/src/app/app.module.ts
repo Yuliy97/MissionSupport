@@ -23,6 +23,7 @@ import { FlashMessagesModule } from 'angular2-flash-messages/module';
 import { AuthGuard } from './guards/auth.guard';
 import { SitesComponent } from './components/sites/sites.component';
 import { ResetComponent } from './components/reset/reset.component';
+import { AdminComponent } from './components/admin/admin.component';
 
 
 const appRoutes: Routes = [
@@ -32,6 +33,7 @@ const appRoutes: Routes = [
     {path: 'sites', component: SitesComponent},
     {path: 'reset', component: ResetComponent},
     {path: 'profile', component: ProfileComponent, canActivate:[AuthGuard]},
+    {path: 'admin', component: AdminComponent, canActivate:[AuthGuard]},
     {path: 'about', component: AboutComponent}
 ]
 
@@ -50,7 +52,8 @@ const googleMapsCore = AgmCoreModule.forRoot({
     FooterComponent,
     AboutComponent,
     SitesComponent,
-    ResetComponent
+    ResetComponent,
+    AdminComponent
   ],
   imports: [
     CommonModule,

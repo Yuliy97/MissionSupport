@@ -42,6 +42,14 @@ export class AuthService {
     return this.http.get('http://localhost:3000/users/profile', {headers: headers}).map(res => res.json());
   }
 
+  get_admin() {
+    let headers = new Headers();
+    this.load_token();
+    headers.append('Authorization', this.authToken);
+    headers.append('Content-Type', 'application/json');
+    return this.http.get('http://localhost:3000/users/admin', {headers: headers}).map(res => res.json());
+  }
+
   store_data(token, user) {
     localStorage.setItem('id_token', token);
     localStorage.setItem('user', JSON.stringify(user));
