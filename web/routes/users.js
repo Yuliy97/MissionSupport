@@ -93,4 +93,16 @@ router.post('/reset', function(req, res, next) {
   });
 });
 
+//Get users
+router.get('/all_users', function(req, res) {
+  const query = User.find({});
+  query.exec(function(err, users) {
+    if (err) {
+      res.send(err);
+    } else {
+      res.json(users);
+    }
+  });
+});
+
 module.exports = router;

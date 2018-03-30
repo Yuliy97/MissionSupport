@@ -1,3 +1,48 @@
-<p>
-  admin works! HOORAY
-</p>
+<ul class="nav nav-tabs">
+  <li class="nav-item">
+    <a class="nav-link active" data-toggle="tab" href="#users">Users</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" data-toggle="tab" href="#sites">Sites</a>
+  </li>
+</ul>
+<div id="myTabContent" class="tab-content" style="margin-bottom: 15%;">
+  <div class="tab-pane fade show active" id="users">
+    <table class="table table-bordered">
+        <thead>
+          <th scope="col">Username</th>
+          <th scope="col">Email</th>
+          <th scope="col">Organization</th>
+          <th scope="col">First name</th>
+          <th scope="col">Last name</th>
+        </thead>
+        <tbody>
+            <!-- Populate table data with all users; basically just load an array with properties [{username: _, email: _, organization:_, first_name:_, last_name:_}] iterate through the array with *ngFor -->
+            <tr *ngFor="let user of user_info">
+                <td>{{user.username}}</td>
+                <td>{{user.email}}</td>
+                <td>{{user.organization}}</td>
+                <td>{{user.first_name}}</td>
+                <td>{{user.last_name}}</td>
+            </tr>
+        </tbody>
+    </table>
+  </div>
+  <div class="tab-pane fade" id="sites">
+    <table class="table table-bordered">
+        <thead>
+          <th scope="col">Site name</th>
+          <th scope="col">Address</th>
+          <th scope="col">Created on</th>
+        </thead>
+        <tbody>
+          <!-- Populate table data with all sites; same idea -->
+          <tr *ngFor="let site of site_info">
+              <td>{{site.name}}</td>
+              <td>{{site.address}}</td>
+              <td>{{site.date}}</td>
+          </tr>
+        </tbody>
+    </table>
+  </div>
+</div>

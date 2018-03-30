@@ -36,7 +36,7 @@ export class AuthService {
   }
 
   isAdmin() {
-    if(this.administrator == true) {
+    if(localStorage.getItem('admin') == 'true') {
         return tokenNotExpired('id_token');
     }
   }
@@ -47,6 +47,7 @@ export class AuthService {
       this.authToken = token;
       this.user = user;
       this.administrator = true;
+      localStorage.setItem('admin', "true");
   }
 
   get_profile() {
@@ -74,6 +75,12 @@ export class AuthService {
     this.authToken = null;
     this.user = null;
     localStorage.clear();
+  }
+
+  get_all_users() {
+    let headers = new Headers();
+    headers.append('Content-Type', 'application/json');
+    return this.http.get('http://localhost:3000/users/all_users', {headers: headers}).map(res => res.json());
   }
 
   //Site auth
