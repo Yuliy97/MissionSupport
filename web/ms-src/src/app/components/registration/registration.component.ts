@@ -17,6 +17,7 @@ export class RegistrationComponent implements OnInit {
   email: String;
   organization: String;
   password: String;
+  user_type: String;
 
   constructor(
     private validate_service: ValidateService,
@@ -35,7 +36,8 @@ export class RegistrationComponent implements OnInit {
       username: this.username,
       email: this.email,
       organization: this.organization,
-      password: this.password
+      password: this.password,
+      user_type: "default"
     }
 
     // Validate fields and email

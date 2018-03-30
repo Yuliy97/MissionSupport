@@ -14,7 +14,8 @@ router.post('/register', function(req, res, next) {
     username: req.body.username,
     email: req.body.email,
     organization: req.body.organization,
-    password: req.body.password
+    password: req.body.password,
+    user_type: req.body.user_type
   });
 
   User.add_user(new_user, function(err, user) {
