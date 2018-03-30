@@ -69,7 +69,7 @@ export class SitesComponent implements OnInit {
                     this.lat = result.lat();
                     this.lng = result.lng();
                     const mylatlng = {lat: this.lat, lng: this.lng};
-                    if (!containsObject(mylatlng, markers)) {
+                    if (!this.containsObject(mylatlng, markers)) {
                       markers.push(mylatlng);
                     }
                 })
