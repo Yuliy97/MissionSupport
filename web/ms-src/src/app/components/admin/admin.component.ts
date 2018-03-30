@@ -17,13 +17,7 @@ export class AdminComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-      this.auth_service.get_admin().subscribe(profile => {
-        this.user = profile.user.user_type;
-      },
-      err => {
-        console.log(err);
-        return false;
-      });
+      
   }
 
 }

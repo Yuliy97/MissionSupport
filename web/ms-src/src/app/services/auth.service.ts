@@ -31,7 +31,12 @@ export class AuthService {
   }
 
   loggedIn() {
-    return tokenNotExpired('id_token');
+      return tokenNotExpired('id_token');
+  }
+
+  //TO DO: HOW DO I GET THIS TO ONLY GIVE TOKEN TO USERS WHO HAVE USER_TYPE: Admin? HELP :,(
+  isAdmin() {
+      return tokenNotExpired('id_token');
   }
 
   get_profile() {
@@ -40,14 +45,6 @@ export class AuthService {
     headers.append('Authorization', this.authToken);
     headers.append('Content-Type', 'application/json');
     return this.http.get('http://localhost:3000/users/profile', {headers: headers}).map(res => res.json());
-  }
-
-  get_admin() {
-    let headers = new Headers();
-    this.load_token();
-    headers.append('Authorization', this.authToken);
-    headers.append('Content-Type', 'application/json');
-    return this.http.get('http://localhost:3000/users/admin', {headers: headers}).map(res => res.json());
   }
 
   store_data(token, user) {

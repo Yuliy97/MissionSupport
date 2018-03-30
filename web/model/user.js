@@ -48,7 +48,8 @@ const user_schema = mongoose.Schema({
   },
   user_type: {
     type: String,
-    required: true
+    required: true,
+    default: 'User'
   },
 
 
