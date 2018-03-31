@@ -131,7 +131,6 @@ export class SitesComponent implements OnInit {
     console.log(item.site_information);
     console.log(item.created_on);
 
-    confirm(JSON.stringify(item) + "?");
     this.auth_service.update_site(item).subscribe(data => {
       if (data.success) {
         alert("You have successfully updated a site");
