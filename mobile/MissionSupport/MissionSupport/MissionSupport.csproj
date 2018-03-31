@@ -112,11 +112,11 @@
     <None Include="packages.config" />
     <None Include="Images\worldMap.jpg" />
     <None Include="View\Images\worldMap.png" />
-    <None Include="Images\fayaz.jpg" />
     <None Include="Images\yuli.jpg" />
     <None Include="Images\maddie.jpeg" />
     <None Include="Images\an.jpg" />
     <None Include="Images\abdullah.jpg" />
+    <None Include="View\Images\fayaz.jpg" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="View\Register.xaml">

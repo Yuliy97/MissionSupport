@@ -60,7 +60,7 @@
                      <Label Text="We are a team of 6 students from Georgia Tech" 
                             HorizontalTextAlignment="Center" />
 
-                     <Image Source="/Images/fayaz.jpg"
+                     <Image Source="fayaz.jpg"
                             HorizontalOptions="Center" 
                             WidthRequest="100"
                             HeightRequest="100"/>
@@ -70,7 +70,7 @@
                             FontSize="22" />
                      <Label Text="Fayaz is a 3rd year CS Major studying AI and People. Fayaz enjoys fashion, collecting sneakers, and browsing Reddit."/>
 
-                     <Image Source="/Images/taylor.jpg"
+                     <Image Source="taylor.jpg"
                             HorizontalOptions="Center" 
                             WidthRequest="100"
                             HeightRequest="100"/>
@@ -80,7 +80,7 @@
                             FontSize="22" />
                      <Label Text="Taylor is a 3rd year CS Major studying AI and Theory. In his free time, Taylor likes to read, swim, and cook."/>
 
-                     <Image Source="/Images/yuli.jpg"
+                     <Image Source="/yuli.jpg"
                             HorizontalOptions="Center" 
                             WidthRequest="100"
                             HeightRequest="100"/>
