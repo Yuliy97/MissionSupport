@@ -74,6 +74,7 @@ export class AdminComponent implements OnInit {
           if (index > -1) {
               users.splice(index, 1);
           }
+          this.flash_message.show('Deleted User!', {cssClass: 'alert-success', timeout: 3000});
       }
   }
 
@@ -84,6 +85,7 @@ export class AdminComponent implements OnInit {
           if (index > -1) {
               sites.splice(index, 1);
           }
+          this.flash_message.show('Deleted Site!', {cssClass: 'alert-success', timeout: 3000});
       }
   }
 
