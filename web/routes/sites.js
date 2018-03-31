@@ -9,6 +9,7 @@ router.post('/create', function(req, res, next) {
     site_name: req.body.site_name,
     site_address: req.body.site_address,
     site_organization: req.body.site_organization,
+    site_information: req.body.site_information,
     created_on: req.body.site_date
   });
 

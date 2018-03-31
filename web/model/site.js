@@ -14,6 +14,10 @@ const site_schema = mongoose.Schema({
     type: String,
     required: true
   },
+  site_information: {
+    type: String,
+    required: false
+  },
   created_on: {
     type: Date,
     required: true,
