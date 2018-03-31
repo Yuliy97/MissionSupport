@@ -1,9 +1,12 @@
 import { Component, Injectable, OnInit, NgZone } from '@angular/core';
 import { AuthService } from '../../services/auth.service';
 import { Router } from '@angular/router';
+import { Location } from '@angular/common';
 
 var sites = [];
 var users = [];
+var initialOpen = true;
+var somethingChanged = false;
 
 @Component({
   selector: 'app-admin',
@@ -17,12 +20,15 @@ export class AdminComponent implements OnInit {
 
   constructor(
     private auth_service: AuthService,
-    private router: Router
+    private router: Router,
+    private location: Location
   ) { }
 
   ngOnInit() {
-    this.load_site_info();
-    this.load_user_info();
+    if (this.load()) {
+        this.load_site_info();
+        this.load_user_info();
+    }
   }
 
   containsObject(obj, list) {
@@ -57,6 +63,19 @@ export class AdminComponent implements OnInit {
         }
       }
     });
+  }
+
+  load() {
+    if (!this.auth_service.accessedSite()) {
+        initialOpen = false;
+        return true;
+    } else if (initialOpen) {
+        initialOpen = false;
+        return true;
+    } else if (somethingChanged) {
+        initialOpen = false;
+        return true;
+    }
   }
 
   site_info = sites;

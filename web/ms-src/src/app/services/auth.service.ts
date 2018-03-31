@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Http, Headers } from '@angular/http';
 import { tokenNotExpired } from 'angular2-jwt';
+import { Location } from '@angular/common';
 import 'rxjs/add/operator/map';
 
 @Injectable()
@@ -41,6 +42,14 @@ export class AuthService {
     }
   }
 
+  accessedSite() {
+      if(localStorage.getItem('sites_accessed') == 'true'){
+          return true;
+      }else{
+          return false;
+      }
+  }
+
   store_Admin(token, user) {
       localStorage.setItem('id_token', token);
       localStorage.setItem('user', JSON.stringify(user));
@@ -75,6 +84,7 @@ export class AuthService {
     this.authToken = null;
     this.user = null;
     localStorage.clear();
+    window.location.reload();
   }
 
   get_all_users() {
@@ -93,6 +103,7 @@ export class AuthService {
   get_all_sites() {
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
+    localStorage.setItem('sites_accessed', 'true');
     return this.http.get('http://localhost:3000/sites/all_sites', {headers: headers}).map(res => res.json());
   }
 }
