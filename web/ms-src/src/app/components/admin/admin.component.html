@@ -15,6 +15,7 @@
           <th scope="col">Organization</th>
           <th scope="col">First name</th>
           <th scope="col">Last name</th>
+          <th scope="col"></th>
         </thead>
         <tbody>
             <!-- Populate table data with all users; basically just load an array with properties [{username: _, email: _, organization:_, first_name:_, last_name:_}] iterate through the array with *ngFor -->
@@ -24,6 +25,7 @@
                 <td>{{user.organization}}</td>
                 <td>{{user.first_name}}</td>
                 <td>{{user.last_name}}</td>
+                <td><button type="button" class="btn btn-secondary" (click)="deleteUser(user)">Delete</button></td>
             </tr>
         </tbody>
     </table>
@@ -34,6 +36,7 @@
           <th scope="col">Site name</th>
           <th scope="col">Address</th>
           <th scope="col">Created on</th>
+          <th scope="col"></th>
         </thead>
         <tbody>
           <!-- Populate table data with all sites; same idea -->
@@ -41,8 +44,10 @@
               <td>{{site.name}}</td>
               <td>{{site.address}}</td>
               <td>{{site.date}}</td>
+              <td><button type="button" class="btn btn-secondary" (click)="deleteSite(site)">Delete</button></td>
           </tr>
         </tbody>
     </table>
   </div>
+
 </div>

@@ -2,6 +2,7 @@ import { Component, Injectable, OnInit, NgZone } from '@angular/core';
 import { AuthService } from '../../services/auth.service';
 import { Router } from '@angular/router';
 import { Location } from '@angular/common';
+import { FlashMessagesService } from 'angular2-flash-messages/module';
 
 var sites = [];
 var users = [];
@@ -21,7 +22,8 @@ export class AdminComponent implements OnInit {
   constructor(
     private auth_service: AuthService,
     private router: Router,
-    private location: Location
+    private location: Location,
+    private flash_message: FlashMessagesService
   ) { }
 
   ngOnInit() {
@@ -65,6 +67,26 @@ export class AdminComponent implements OnInit {
     });
   }
 
+  deleteUser(user) {
+      if(confirm("Are you sure to delete the user:  "+ JSON.stringify(user.username) + "?")) {
+          console.log("Implement delete user functionality here from DB (NOT DONE)");
+          var index = users.indexOf(user, 0);
+          if (index > -1) {
+              users.splice(index, 1);
+          }
+      }
+  }
+
+  deleteSite(site) {
+      if(confirm("Are you sure to delete the site: "+ JSON.stringify(site.name) + "?")) {
+          console.log("Implement delete site functionality here from DB (NOT DONE)");
+          var index = sites.indexOf(site, 0);
+          if (index > -1) {
+              sites.splice(index, 1);
+          }
+      }
+  }
+
   load() {
     if (!this.auth_service.accessedSite()) {
         initialOpen = false;
@@ -74,6 +96,7 @@ export class AdminComponent implements OnInit {
         return true;
     } else if (somethingChanged) {
         initialOpen = false;
+        somethingChanged = false;
         return true;
     }
   }
