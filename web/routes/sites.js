@@ -23,6 +23,11 @@ router.post('/create', function(req, res, next) {
 
 });
 
+router.post('/update', function(req, res, next) {
+
+
+});
+
 //Get sites
 router.get('/all_sites', function(req, res) {
   const query = Site.find({});

@@ -7,6 +7,7 @@ import { Observable, Observer } from 'rxjs';
 import { MapsAPILoader } from 'angular2-google-maps/core';
 import { GoogleMapsAPIWrapper } from 'angular2-google-maps/core';
 import { GMapsService } from '../../services/google-maps.service';
+import { Location } from '@angular/common';
 
 var markers = [];
 var names = [];
@@ -38,7 +39,8 @@ export class SitesComponent implements OnInit {
     private flash_message: FlashMessagesService,
     private auth_service: AuthService,
     private gm_service: GMapsService,
-    private __zone: NgZone
+    private __zone: NgZone,
+    private location: Location
   ) {
   }
   lat: number = 33.7490;
@@ -62,7 +64,7 @@ export class SitesComponent implements OnInit {
       console.log(data);
       for (var i = 0; i < data.length; i++) {
         var addr = data[i].site_address;
-        names.push({name: data[i].site_name, organization: data[i].site_organization, information: data[i].site_information, date: data[i].created_on});
+        names.push({name: data[i].site_name, organization: data[i].site_organization, information: data[i].site_information, date: data[i].created_on, address: data[i].site_address});
         this.gm_service.getLatLan(addr)
         .subscribe(
             result => {
@@ -107,11 +109,38 @@ export class SitesComponent implements OnInit {
     this.auth_service.create_site(site).subscribe(data => {
       if (data.success) {
         alert("You have successfully created a site");
+        window.location.reload();
       } else {
         alert("Something went wrong");
       }
     });
   }
+
+ on_edit(site) {
+     this.auth_service.last_accesed_site(site);
+ }
+
+ on_save_edits(){
+    var item = this.auth_service.get_last_accesed_site();
+
+    item.information = this.site_information;
+
+    console.log(item.site_name);
+    console.log(item.site_address);
+    console.log(item.site_organization);
+    console.log(item.site_information);
+    console.log(item.created_on);
+
+    confirm(JSON.stringify(item) + "?");
+    this.auth_service.update_site(item).subscribe(data => {
+      if (data.success) {
+        alert("You have successfully updated a site");
+        window.location.reload();
+      } else {
+        alert("Something went wrong");
+      }
+    });
+ }
 
   updated_markers = markers;
   site_info = names;

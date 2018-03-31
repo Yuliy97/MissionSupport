@@ -11,6 +11,11 @@
              <strong>Site Information: {{site_info[i].information}}</strong>
              <br>
              <strong>Created on: {{site_info[i].date}}</strong>
+             <br>
+             <strong>Address: {{site_info[i].address}}</strong>
+             <br>
+             <button type="button" (click)="on_edit(site_info[i])" *ngIf="auth_service.loggedIn()" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-sm">Add Site Information</button>
+
          </sebm-google-map-info-window>
      </sebm-google-map-marker>
 </sebm-google-map>
@@ -47,8 +52,29 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button (click)="on_add()" type="button" id="add_site" class="btn btn-primary">Submit</button>
+        <button (click)="on_add()" type="button" id="add_site" class="btn btn-primary" data-dismiss="modal">Submit</button>
       </div>
     </div>
+  </div>
+</div>
+
+<div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+  <div class="modal-dialog modal-sm" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="exampleModalLabel">Edit Site</h4>
+        </div>
+        <div class="modal-body">
+          <form>
+            <label>Input Site Information:
+              <input type="text" [(ngModel)]="site_information" name="site_information" class="form-control">
+            </label>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button (click)="on_save_edits()" type="button" class="btn btn-primary" data-dismiss="modal">Save Changes</button>
+        </div>
+      </div>
   </div>
 </div>

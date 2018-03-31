@@ -106,4 +106,19 @@ export class AuthService {
     localStorage.setItem('sites_accessed', 'true');
     return this.http.get('http://localhost:3000/sites/all_sites', {headers: headers}).map(res => res.json());
   }
+
+  last_accesed_site(site) {
+      this.site = site;
+  }
+
+  get_last_accesed_site() {
+      return this.site;
+  }
+
+  update_site(site) {
+    let headers = new Headers();
+    headers.append('Content-Type', 'application/json');
+    return this.http.post('http://localhost:3000/sites/update', site, {headers: headers}).map(res => res.json());
+  }
+
 }
