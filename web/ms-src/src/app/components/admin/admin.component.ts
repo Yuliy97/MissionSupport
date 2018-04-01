@@ -78,6 +78,14 @@ export class AdminComponent implements OnInit {
       }
   }
 
+  verifyUser(user) {
+      if(confirm("Are you sure to verify the user:  "+ JSON.stringify(user.username) + "?")) {
+          console.log("Implement verify user functionality here from DB (NOT DONE)");
+           var index = users.indexOf(user, 0);
+          this.flash_message.show('Verified User!', {cssClass: 'alert-success', timeout: 3000});
+      }
+  }
+
   deleteSite(site) {
       if(confirm("Are you sure to delete the site: "+ JSON.stringify(site.name) + "?")) {
           console.log("Implement delete site functionality here from DB (NOT DONE)");
