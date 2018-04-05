@@ -9,8 +9,8 @@
             <maps:Map x:Name="SitesMap"
                 VerticalOptions="FillAndExpand"
                 IsShowingUser="false"
-            MapType="Hybrid"
-            />
+            MapType="Hybrid" />
+            <Button HorizontalOptions="End" VerticalOptions="End" Text="Add Site" Clicked="AddSite_Clicked" />
         </Grid>
     </StackLayout>
     

@@ -1,4 +1,6 @@
-﻿namespace MissionSupport.Model
+﻿using System.Collections.Generic;
+
+namespace MissionSupport.Model
 {
     public interface IDatabase
     {
@@ -7,6 +9,8 @@
         User getUserByEmail(string email);
 
         Site getSiteByName(string name);
+
+        IEnumerable<Site> getSites();
 
         // return login success
         bool login(string email, string password);

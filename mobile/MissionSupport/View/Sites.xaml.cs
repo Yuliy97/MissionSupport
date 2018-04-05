@@ -22,24 +22,16 @@ namespace MissionSupport.View
 
         protected override async void OnAppearing()
         {
-            List<Site> sitesList = new List<Site>();
-            sitesList.Add(new Site("Tech Tower", "Tech Tower, Atlanta, GA 30313", DateTime.Now));
-            sitesList.Add(new Site("CDC", "1600 Clifton Rd, Atlanta, GA 30333", DateTime.Now));
-            sitesList.Add(new Site("Emory", "1648 Pierce Dr NE, Atlanta, GA 30307", DateTime.Now));
-
             Geocoder geocoder = new Geocoder();
 
-            foreach (Site localSite in sitesList) {
-                database.addSite(localSite);
-                Site site = database.getSiteByName(localSite.Name);
-
+            foreach (Site site in database.getSites()) {
                 var positions = await geocoder.GetPositionsForAddressAsync(site.Address);
                 Position position = new Position();
                 try {
                     position = positions.First();
                 } catch (InvalidOperationException) {
-                    await DisplayAlert("Error", "That address could not be found", "OK");
-                    return;
+                    await DisplayAlert("Error", "A site address could not be found", "OK");
+                    continue;
                 }
 
                 Pin pin = new Pin() {
@@ -50,6 +42,12 @@ namespace MissionSupport.View
                 SitesMap.Pins.Add(pin);
                 SitesMap.MoveToRegion(MapSpan.FromCenterAndRadius(position, new Distance(10000)));
             }
+        }
+
+        private async void AddSite_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new AddSite());
+            //await ((NavigationPage) Main.Instance.Detail).PushAsync(new AddSite());
         }
     }
 }

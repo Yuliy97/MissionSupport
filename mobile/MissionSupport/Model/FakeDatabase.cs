@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System;
 
 namespace MissionSupport.Model
 {
@@ -19,6 +20,12 @@ namespace MissionSupport.Model
             usersByEmail = new Dictionary<string, User>();
             passwordsByEmail = new Dictionary<string, string>();
             sitesByName = new Dictionary<string, Site>();
+
+            addUser(new User("test", "test", "test", "test"), "test");
+
+            addSite(new Site("Tech Tower", "Tech Tower, Atlanta, GA 30313", DateTime.Now));
+            addSite(new Site("CDC", "1600 Clifton Rd, Atlanta, GA 30333", DateTime.Now));
+            addSite(new Site("Emory", "1648 Pierce Dr NE, Atlanta, GA 30307", DateTime.Now));
         }
 
         public User getUserByUsername(string username)
@@ -43,6 +50,13 @@ namespace MissionSupport.Model
                 return sitesByName[name];
             }
             return null;
+        }
+
+        public IEnumerable<Site> getSites()
+        {
+            foreach (Site site in sitesByName.Values) {
+                yield return site;
+            }
         }
 
         public bool login(string email, string password)
