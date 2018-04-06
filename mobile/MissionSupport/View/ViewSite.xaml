@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
-             x:Class="MissionSupport.View.AddSite"
-             Title="Add Site">
+             x:Class="MissionSupport.View.ViewSite">
     <StackLayout>
         <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
             <Image Source="https://i.pinimg.com/originals/32/51/66/32516609fe86b53aa3b5748cf3c31e4a.jpg" 
@@ -21,22 +20,10 @@
                 HorizontalOptions="Center"
                 VerticalOptions="CenterAndExpand">
                     <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
-                        <Entry x:Name="NameEntry" 
-                            Placeholder="Name" 
-                            Margin = "10,40,10,10"
+                        <Label x:Name="NameLabel" 
                         />
 
-                        <Entry x:Name="AddressEntry" 
-                            Placeholder="Address"
-                            Margin="10"
-                        />
-
-                        <Button x:Name="CreateButton" 
-                            Text="Create" 
-                            BackgroundColor="Teal"
-                            TextColor="White"
-                            Clicked="CreateButton_Clicked"
-                            Margin="10"
+                        <Label x:Name="AddressLabel" 
                         />
                     </StackLayout>
                 </Frame>

@@ -20,17 +20,7 @@ namespace MissionSupport.View
             this.database = database;
             // TODO: show user location if permission granted
 
-            Geocoder geocoder = new Geocoder();
-
-            Site displaySite = null;
-            foreach (Site site in database.getSites()) {
-                addPin(site);
-                displaySite = site;
-            }
-
-            if (displaySite != null) {
-                SitesMap.MoveToRegion(MapSpan.FromCenterAndRadius(displaySite.Location, DEFAULT_ZOOM));
-            }
+            refreshMap();
         }
 
         private async void AddSite_Clicked(object sender, EventArgs e)
@@ -45,12 +35,36 @@ namespace MissionSupport.View
             };
         }
 
+        private async void Pin_Clicked(object sender, EventArgs e)
+        {
+            Pin clickedPin = (Pin) sender;
+            Site site = database.getSiteByName(clickedPin.Label);
+            ViewSite viewSite = new ViewSite(database, site);
+            await Navigation.PushAsync(viewSite);
+        }
+
+        private void refreshMap()
+        {
+            SitesMap.Pins.Clear();
+
+            Site displaySite = null;
+            foreach (Site site in database.getSites()) {
+                addPin(site);
+                displaySite = site;
+            }
+
+            if (displaySite != null) {
+                SitesMap.MoveToRegion(MapSpan.FromCenterAndRadius(displaySite.Location, DEFAULT_ZOOM));
+            }
+        }
+
         private void addPin(Site site)
         {
             Pin pin = new Pin() {
                 Position = site.Location,
                 Label = site.Name
             };
+            pin.Clicked += Pin_Clicked;
 
             SitesMap.Pins.Add(pin);
         }
