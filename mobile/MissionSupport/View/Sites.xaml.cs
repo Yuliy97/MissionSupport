@@ -38,7 +38,7 @@ namespace MissionSupport.View
         private async void Pin_Clicked(object sender, EventArgs e)
         {
             Pin clickedPin = (Pin) sender;
-            Site site = database.getSiteByName(clickedPin.Label);
+            Site site = await database.getSiteByName(clickedPin.Label);
             ViewSite viewSite = new ViewSite(database, site);
             await Navigation.PushAsync(viewSite);
         }

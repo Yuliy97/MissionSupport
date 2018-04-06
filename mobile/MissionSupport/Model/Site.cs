@@ -23,13 +23,16 @@ namespace MissionSupport.Model
 
         public Site(string name, string address)
         {
-            Geocoder geocoder = new Geocoder();
-
             Name = name;
             Address = address;
-
-            Location = Task.Run(() => geocoder.GetPositionsForAddressAsync(address)).Result.First();
+            Task.Run(async () => await generateLocation());
             CreatedOn = DateTime.Now;
+        }
+
+        private async Task generateLocation()
+        {
+            Geocoder geocoder = new Geocoder();
+            Location = (await geocoder.GetPositionsForAddressAsync(Address)).First();
         }
 
         public override int GetHashCode()
@@ -37,10 +40,10 @@ namespace MissionSupport.Model
             return Name.GetHashCode() + 19 * Address.GetHashCode() + 23 * Location.GetHashCode() + 31 * CreatedOn.GetHashCode();
         }
 
-        public static bool validAddress(string address)
+        public static async Task<bool> validAddress(string address)
         {
             Geocoder geocoder = new Geocoder();
-            var positions = Task.Run(() => geocoder.GetPositionsForAddressAsync(address)).Result;
+            var positions = await geocoder.GetPositionsForAddressAsync(address);
 
             try {
                 Position position = positions.First();

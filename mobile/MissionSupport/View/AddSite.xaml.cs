@@ -25,13 +25,13 @@ namespace MissionSupport.View
             string name = NameEntry.Text;
             string address = AddressEntry.Text;
 
-            if (!Site.validAddress(address)) {
+            if (!await Site.validAddress(address)) {
                 await DisplayAlert("Add Site", "Invalid address", "OK");
                 return;
             }
 
             Site site = new Site(name, address);
-            if (database.addSite(site)) {
+            if (await database.addSite(site)) {
                 NewSite = site;
                 await Navigation.PopAsync();
             } else {

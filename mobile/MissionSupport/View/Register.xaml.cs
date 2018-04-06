@@ -21,16 +21,16 @@ namespace MissionSupport.View
             this.database = database;
         }
 
-        private void RegisterButton_Clicked(object sender, EventArgs e)
+        private async void RegisterButton_Clicked(object sender, EventArgs e)
         {
             User newUser = new User(EmailEntry.Text, UsernameEntry.Text, FirstNameEntry.Text, LastNameEntry.Text);
-            if (database.addUser(newUser, PasswordEntry.Text))
+            if (await database.addUser(newUser, PasswordEntry.Text))
             {
-                DisplayAlert("Register", "Register Success", "OK");
+                await DisplayAlert("Register", "Register Success", "OK");
             }
             else
             {
-                DisplayAlert("Register", "Register Fail", "OK");
+                await DisplayAlert("Register", "Register Fail", "OK");
             }
         }
     }

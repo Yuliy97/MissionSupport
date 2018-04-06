@@ -1,10 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using MissionSupport.Model;
 
 using Xamarin.Forms;
-//using MissionSupport.Model;
 
+using MissionSupport.Model;
 
 namespace MissionSupport.View
 {
@@ -17,17 +15,15 @@ namespace MissionSupport.View
             InitializeComponent();
 
             this.database = database;
-            //SignInCheck();
         }
 
-        void SignInCheck(object sender, EventArgs e) {
-            
-            if (database.login(UsernameEntry.Text, PasswordEntry.Text)) {
-                DisplayAlert("Login", "Login Success", "OK");
+        private async void SignInCheck(object sender, EventArgs e) 
+        {
+            if (await database.login(UsernameEntry.Text, PasswordEntry.Text)) {
+                await DisplayAlert("Login", "Login Success", "OK");
             } else {
-                DisplayAlert("Login", "Login Fail", "OK");
+                await DisplayAlert("Login", "Login Fail", "OK");
             }
-
         }
     }
 }

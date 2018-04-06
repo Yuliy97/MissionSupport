@@ -1,24 +1,25 @@
 ﻿using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace MissionSupport.Model
 {
     public interface IDatabase
     {
-        User getUserByUsername(string username);
+        Task<User> getUserByUsername(string username);
 
-        User getUserByEmail(string email);
+        Task<User> getUserByEmail(string email);
 
-        Site getSiteByName(string name);
+        Task<Site> getSiteByName(string name);
 
         IEnumerable<Site> getSites();
 
         // return login success
-        bool login(string email, string password);
+        Task<bool> login(string email, string password);
 
         // return user creation success
-        bool addUser(User user, string password);
+        Task<bool> addUser(User user, string password);
 
         // return site creation success
-        bool addSite(Site site);
+        Task<bool> addSite(Site site);
     }
 }

@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace MissionSupport.Model
 {
@@ -20,14 +21,19 @@ namespace MissionSupport.Model
             passwordsByEmail = new Dictionary<string, string>();
             sitesByName = new Dictionary<string, Site>();
 
-            addUser(new User("test", "test", "test", "test"), "test");
-
-            addSite(new Site("Tech Tower", "Tech Tower, Atlanta, GA 30313"));
-            addSite(new Site("CDC", "1600 Clifton Rd, Atlanta, GA 30333"));
-            addSite(new Site("Emory", "1648 Pierce Dr NE, Atlanta, GA 30307"));
+            Task.Run(async () => await prepopulate());
         }
 
-        public User getUserByUsername(string username)
+        private async Task prepopulate()
+        {
+            await addUser(new User("test", "test", "test", "test"), "test");
+
+            await addSite(new Site("Tech Tower", "Tech Tower, Atlanta, GA 30313"));
+            await addSite(new Site("CDC", "1600 Clifton Rd, Atlanta, GA 30333"));
+            await addSite(new Site("Emory", "1648 Pierce Dr NE, Atlanta, GA 30307"));
+        }
+
+        public async Task<User> getUserByUsername(string username)
         {
             if (usersByUsername.ContainsKey(username)) {
                 return usersByUsername[username];
@@ -35,7 +41,7 @@ namespace MissionSupport.Model
             return null;
         }
 
-        public User getUserByEmail(string email)
+        public async Task<User> getUserByEmail(string email)
         {
             if (usersByEmail.ContainsKey(email)) {
                 return usersByEmail[email];
@@ -43,7 +49,7 @@ namespace MissionSupport.Model
             return null;
         }
 
-        public Site getSiteByName(string name)
+        public async Task<Site> getSiteByName(string name)
         {
             if (sitesByName.ContainsKey(name)) {
                 return sitesByName[name];
@@ -58,12 +64,12 @@ namespace MissionSupport.Model
             }
         }
 
-        public bool login(string email, string password)
+        public async Task<bool> login(string email, string password)
         {
             return passwordsByEmail.ContainsKey(email) && passwordsByEmail[email] == password;
         }
 
-        public bool addUser(User user, string password)
+        public async Task<bool> addUser(User user, string password)
         {
             if (usersByEmail.ContainsKey(user.Email) || usersByUsername.ContainsKey(user.UserName)) {
                 return false;
@@ -76,9 +82,9 @@ namespace MissionSupport.Model
             return true;
         }
 
-        public bool addSite(Site site)
+        public async Task<bool> addSite(Site site)
         {
-            if (sitesByName.ContainsKey(site.Name) || !Site.validAddress(site.Address)) {
+            if (sitesByName.ContainsKey(site.Name) || !await Site.validAddress(site.Address)) {
                 return false;
             }
 
