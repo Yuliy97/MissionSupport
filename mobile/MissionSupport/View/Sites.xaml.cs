@@ -23,7 +23,7 @@ namespace MissionSupport.View
             refreshMap();
         }
 
-        private async void AddSite_Clicked(object sender, EventArgs e)
+        private async void AddSite_Clicked(object sender, EventArgs e) // TODO: only allow for logged in users
         {
             AddSite addSite = new AddSite(database);
             await Navigation.PushAsync(addSite);

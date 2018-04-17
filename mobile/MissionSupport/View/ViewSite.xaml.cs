@@ -6,7 +6,7 @@ using MissionSupport.Model;
 
 namespace MissionSupport.View
 {
-    public partial class ViewSite : ContentPage // TODO: make this a tabbed page with info, calendar, etc tabs
+    public partial class ViewSite : ContentPage // TODO: add editing for logged in users, add description field
     {
         public Site Site { get; private set; }
 

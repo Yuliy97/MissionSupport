@@ -31,6 +31,10 @@
                             Margin="10"
                         />
 
+                        <Editor x:Name="DescriptionEditor"
+                            Text="Description" 
+                        />
+
                         <Button x:Name="CreateButton" 
                             Text="Create" 
                             BackgroundColor="Teal"

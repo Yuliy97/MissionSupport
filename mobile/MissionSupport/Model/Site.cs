@@ -8,25 +8,39 @@ namespace MissionSupport.Model
 {
     public class Site
     {
+        private static int currentID = 0;
+
+        public int ID { get; private set; }
         public string Name { get; private set; }
         public string Address { get; private set; }
+        public string Description { get; private set; }
         public Position Location { get; private set; }
         public DateTime CreatedOn { get; private set; }
 
-        public Site(string name, string address, Position location, DateTime createdOn)
+        public Site(string name, string address, string description, Position location, DateTime createdOn)
         {
-            Name = name;
-            Address = address;
-            Location = location;
-            CreatedOn = createdOn;
+            initialize(name, address, description, location, createdOn);
         }
 
-        public Site(string name, string address)
+        public Site(string name, string address, string description)
         {
+            initialize(name, address, description, null, null);
+        }
+
+        private void initialize(string name, string address, string description, Position? location, DateTime? createdOn)
+        {
+            ID = currentID;
+            currentID++;
+
             Name = name;
             Address = address;
-            Task.Run(async () => await generateLocation());
-            CreatedOn = DateTime.Now;
+            Description = description;
+            if (location == null) {
+                Task.Run(async () => await generateLocation());
+            } else {
+                Location = location.Value;
+            }
+            CreatedOn = (createdOn == null) ? DateTime.Now : createdOn.Value;
         }
 
         private async Task generateLocation()
@@ -37,7 +51,7 @@ namespace MissionSupport.Model
 
         public override int GetHashCode()
         {
-            return Name.GetHashCode() + 19 * Address.GetHashCode() + 23 * Location.GetHashCode() + 31 * CreatedOn.GetHashCode();
+            return ID;
         }
 
         public static async Task<bool> validAddress(string address)

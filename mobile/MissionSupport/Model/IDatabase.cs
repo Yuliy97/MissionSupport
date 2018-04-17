@@ -5,9 +5,13 @@ namespace MissionSupport.Model
 {
     public interface IDatabase
     {
+        Task<User> getUserByID(int id);
+
         Task<User> getUserByUsername(string username);
 
         Task<User> getUserByEmail(string email);
+
+        Task<Site> getSiteByID(int id);
 
         Task<Site> getSiteByName(string name);
 
