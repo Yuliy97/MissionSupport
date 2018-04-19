@@ -25,6 +25,7 @@ namespace MissionSupport.View
             Title = Site.Name;
             NameLabel.Text = "Name: " + Site.Name;
             AddressLabel.Text = "Address: " + Site.Address;
+            DescriptionLabel.Text = "Description: " + Site.Description;
         }
     }
 }

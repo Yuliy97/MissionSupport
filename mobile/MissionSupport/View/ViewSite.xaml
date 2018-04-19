@@ -25,6 +25,9 @@
 
                         <Label x:Name="AddressLabel" 
                         />
+
+                        <Label x:Name="DescriptionLabel" 
+                        />
                     </StackLayout>
                 </Frame>
             </StackLayout>

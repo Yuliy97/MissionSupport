@@ -10,7 +10,7 @@
                 VerticalOptions="FillAndExpand"
                 IsShowingUser="false"
             MapType="Hybrid" />
-            <Button HorizontalOptions="End" VerticalOptions="End" Text="Add Site" Clicked="AddSite_Clicked" />
+            <Button HorizontalOptions="Center" VerticalOptions="End" Text="Add Site" Clicked="AddSite_Clicked" />
         </Grid>
     </StackLayout>
     
