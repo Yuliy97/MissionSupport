@@ -36,7 +36,7 @@
                         <Editor x:Name="DescriptionEditor"
                             WidthRequest="450"
                             HeightRequest="100"
-                            TextColor="Silver"
+                            TextColor="Gray"
                             Text="Description" 
                         />
 
