@@ -24,8 +24,6 @@ namespace MissionSupport.View
 
         private async void CreateButton_Clicked(object sender, EventArgs e)
         {
-            tryRemovePlaceholder();
-
             string name = NameEntry.Text;
             string address = AddressEntry.Text;
             string description = DescriptionEditor.Text;
@@ -52,9 +50,9 @@ namespace MissionSupport.View
         private void tryRemovePlaceholder()
         {
             if (showDescriptionPlaceholder) {
+                showDescriptionPlaceholder = false;
                 DescriptionEditor.Text = "";
                 DescriptionEditor.TextColor = Color.Black;
-                showDescriptionPlaceholder = false;
             }
         }
     }
