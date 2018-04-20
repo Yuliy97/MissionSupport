@@ -38,6 +38,7 @@
                             HeightRequest="100"
                             TextColor="Gray"
                             Text="Description" 
+                            Focused="DescriptionEditor_Focused"
                         />
 
                         <Button x:Name="CreateButton" 
