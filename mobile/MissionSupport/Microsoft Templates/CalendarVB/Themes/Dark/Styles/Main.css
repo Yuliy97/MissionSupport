@@ -1,0 +1,144 @@
+﻿/*-------------------------------------
+    Default Border Color: #7F7F7F
+    Default background color: #2F2F2F
+-------------------------------------*/
+
+@import url("../../Default/Styles/Main.css");
+
+body {
+    font-family: Verdana, Arial, San-Serif;
+    background-color: #2f2f2f;
+    color: #bfbfbf;
+}
+
+#header {
+    background-color: #1f1f1f;
+}
+
+#mainBody {
+    border-color: #7f7f7f;
+}
+
+    #leftBar {
+        float: right;
+    }
+    
+        .nav-section {
+            border-color: #7f7f7f;
+        }
+        
+            .nav-section h3 {
+                background-color: #1f1f1f;
+            }
+            
+            .theme-selected {
+                background-color: #7f7f7f;
+                border-color: black;
+            }
+
+            .themeUnselected {
+                background-color: #4f4f4f;
+                border-color: #8f8f8f;
+            }
+
+    #mainSection {
+        float: left;
+        border-left: none;
+        border-right: 1px solid #d1d6df;
+        border-color: #7f7f7f;
+    }
+
+        #calendarBar {
+            background-color: #1f1f1f;
+        }
+        
+        #calendarPane {
+            background-color: #3f3f3f;
+        }
+
+        #information {
+            border-color: #7f7f7f;
+            background-color: #3f3f3f;
+        }
+
+            h2 {
+                background-color: #1f1f1f;
+            }
+
+#accountBox {
+    border-color: #7f7f7f;
+}
+
+    #accountBox p {
+        background-color: #3f3f3f;
+        border-color: #7f7f7f;
+    }
+
+caption {
+    background-color: #1f1f1f;
+    border-color: #7f7f7f;
+}
+
+table.info td, table.info th {
+    border-color: #808080;
+}
+
+    table.info input, table.info textarea, table.info select {
+        border-color: #7f7f7f;
+    }
+
+    table.info tr:nth-child(even) {
+        background-color: #2f2f2f;
+    }
+
+    table.info tr:nth-child(odd) {
+        background-color: #1f1f1f;
+    }
+    
+table.month-view {
+    border-collapse: separate;
+    border-spacing: 2px;
+}
+
+    table.month-view td {
+        border: none;
+        border: 1px dashed black;
+        background-color: #2f2f2f;
+    }
+        .day-number {
+            color: #3da1cf;
+        }
+
+    table.month-view th {
+        border-color: #7f7f7f;
+        background-color: #2f2f2f;
+    }
+
+    table.month-view td.inactive {
+        background-color: #1f1f1f;
+    }
+
+    table.month-view td.today {
+        background-color: #282828;
+    }
+    
+.confirm {
+    background-color: #fff8af;
+    border-color: #cfc55a;
+}
+
+/*  Generic Classes
+-------------------------------------------------------*/
+.calendar-name {
+    border-color: #7f7f7f;
+    color: #000;
+}
+
+.border-bottom {
+    border-color: #7f7f7f;
+}
+
+.validation-summary-errors {
+    background-color: #3f3333;
+    border-color: #9f5959;
+}

@@ -31,6 +31,12 @@
                         <Label x:Name="DescriptionLabel" 
                                WidthRequest="1000"
                         />
+                        
+                        <Label x:Name="MainLabel"
+                               WidthRequest="1000"
+                        />
+
+
                     </StackLayout>
                 </Frame>
             </StackLayout>

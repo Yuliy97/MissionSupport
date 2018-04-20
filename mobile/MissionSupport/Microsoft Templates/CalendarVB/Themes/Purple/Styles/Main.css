@@ -1,0 +1,33 @@
+﻿@import url("../../Default/Styles/Main.css");
+@import url("Colors.css");
+
+#header {
+    overflow: hidden;
+    padding: 0;
+    position: relative;
+    min-height: 5em;
+}
+
+    #siteTitle {
+        margin-left: 1em;
+        float: left;
+        position: absolute;
+        top: 50%;
+        margin-top: -.5em;
+    }
+    
+#userInfo {
+    border-left: 1px solid #24002f;
+    background-color: #bd8ecf;
+    float: right;
+    padding: 10px;
+}
+
+    #userInfo a {
+        text-decoration: underline;
+    }
+
+#information {
+    margin: 10px;
+    min-height: inherit;
+}

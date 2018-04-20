@@ -124,6 +124,75 @@
     <None Include="Images\an.jpg" />
     <None Include="Images\abdullah.jpg" />
     <None Include="packages.config" />
+    <None Include="Microsoft Templates\README.txt" />
+    <None Include="Microsoft Templates\License.rtf" />
+    <None Include="Microsoft Templates\CalendarVB\_PageStart.vbhtml" />
+    <None Include="Microsoft Templates\CalendarVB\_AppStart.vbhtml" />
+    <None Include="Microsoft Templates\CalendarVB\Themes\_PageStart.vbhtml" />
+    <None Include="Microsoft Templates\CalendarVB\Themes\Purple\Styles\Main.css" />
+    <None Include="Microsoft Templates\CalendarVB\Themes\Purple\Styles\Colors.css" />
+    <None Include="Microsoft Templates\CalendarVB\Themes\Purple\Sections\UserInfo.vbhtml" />
+    <None Include="Microsoft Templates\CalendarVB\Themes\Purple\Sections\LeftBar.vbhtml" />
+    <None Include="Microsoft Templates\CalendarVB\Themes\Purple\Layouts\Main.vbhtml" />
+    <None Include="Microsoft Templates\CalendarVB\Themes\Purple\Layouts\Calendar.vbhtml" />
+    <None Include="Microsoft Templates\CalendarVB\Themes\GreenHeader\Styles\Main.css" />
+    <None Include="Microsoft Templates\CalendarVB\Themes\Default\Styles\Reset.css" />
+    <None Include="Microsoft Templates\CalendarVB\Themes\Default\Styles\Main.css" />
+    <None Include="Microsoft Templates\CalendarVB\Themes\Default\Sections\UserInfo.vbhtml" />
+    <None Include="Microsoft Templates\CalendarVB\Themes\Default\Sections\ThemeList.vbhtml" />
+    <None Include="Microsoft Templates\CalendarVB\Themes\Default\Sections\StylesScripts.vbhtml" />
+    <None Include="Microsoft Templates\CalendarVB\Themes\Default\Sections\SharedCalendars.vbhtml" />
+    <None Include="Microsoft Templates\CalendarVB\Themes\Default\Sections\MyCalendars.vbhtml" />
+    <None Include="Microsoft Templates\CalendarVB\Themes\Default\Sections\LeftBar.vbhtml" />
+    <None Include="Microsoft Templates\CalendarVB\Themes\Default\Sections\CalendarView.vbhtml" />
+    <None Include="Microsoft Templates\CalendarVB\Themes\Default\Scripts\Main.js" />
+    <None Include="Microsoft Templates\CalendarVB\Themes\Default\Partials\EventForm.vbhtml" />
+    <None Include="Microsoft Templates\CalendarVB\Themes\Default\Partials\DayList.vbhtml" />
+    <None Include="Microsoft Templates\CalendarVB\Themes\Default\Partials\CalendarForm.vbhtml" />
+    <None Include="Microsoft Templates\CalendarVB\Themes\Default\Layouts\Main.vbhtml" />
+    <None Include="Microsoft Templates\CalendarVB\Themes\Default\Layouts\Calendar.vbhtml" />
+    <None Include="Microsoft Templates\CalendarVB\Themes\Default\Layouts\Account.vbhtml" />
+    <None Include="Microsoft Templates\CalendarVB\Themes\Default\Images\AddEvent16x16.png" />
+    <None Include="Microsoft Templates\CalendarVB\Themes\Default\Displays\Month.vbhtml" />
+    <None Include="Microsoft Templates\CalendarVB\Themes\Default\Displays\List.vbhtml" />
+    <None Include="Microsoft Templates\CalendarVB\Themes\Dark\Styles\Main.css" />
+    <None Include="Microsoft Templates\CalendarVB\robots.txt" />
+    <None Include="Microsoft Templates\CalendarVB\favicon.ico" />
+    <None Include="Microsoft Templates\CalendarVB\Event\_PageStart.vbhtml" />
+    <None Include="Microsoft Templates\CalendarVB\Event\Info.vbhtml" />
+    <None Include="Microsoft Templates\CalendarVB\Event\Edit.vbhtml" />
+    <None Include="Microsoft Templates\CalendarVB\Event\Download.vbhtml" />
+    <None Include="Microsoft Templates\CalendarVB\Event\Delete.vbhtml" />
+    <None Include="Microsoft Templates\CalendarVB\Event\Add.vbhtml" />
+    <None Include="Microsoft Templates\CalendarVB\Download.vbhtml" />
+    <None Include="Microsoft Templates\CalendarVB\Default.vbhtml" />
+    <None Include="Microsoft Templates\CalendarVB\Calendar\_PageStart.vbhtml" />
+    <None Include="Microsoft Templates\CalendarVB\Calendar\Share\_PageStart.vbhtml" />
+    <None Include="Microsoft Templates\CalendarVB\Calendar\Share\View.vbhtml" />
+    <None Include="Microsoft Templates\CalendarVB\Calendar\Share\Share.vbhtml" />
+    <None Include="Microsoft Templates\CalendarVB\Calendar\Share\Edit.vbhtml" />
+    <None Include="Microsoft Templates\CalendarVB\Calendar\Info.vbhtml" />
+    <None Include="Microsoft Templates\CalendarVB\Calendar\Edit.vbhtml" />
+    <None Include="Microsoft Templates\CalendarVB\Calendar\Delete.vbhtml" />
+    <None Include="Microsoft Templates\CalendarVB\Calendar\Default.vbhtml" />
+    <None Include="Microsoft Templates\CalendarVB\Calendar\ChangeView.vbhtml" />
+    <None Include="Microsoft Templates\CalendarVB\Calendar\ChangeTheme.vbhtml" />
+    <None Include="Microsoft Templates\CalendarVB\Calendar\Add.vbhtml" />
+    <None Include="Microsoft Templates\CalendarVB\bin\Microsoft.Web.Helpers.dll" />
+    <None Include="Microsoft Templates\CalendarVB\App_Data\Calendar.sdf" />
+    <None Include="Microsoft Templates\CalendarVB\App_Code\UserHelper.vb" />
+    <None Include="Microsoft Templates\CalendarVB\App_Code\Time.vb" />
+    <None Include="Microsoft Templates\CalendarVB\App_Code\Sharing.vb" />
+    <None Include="Microsoft Templates\CalendarVB\App_Code\RequestData.vb" />
+    <None Include="Microsoft Templates\CalendarVB\App_Code\Permissions.vb" />
+    <None Include="Microsoft Templates\CalendarVB\App_Code\IcsHelper.vb" />
+    <None Include="Microsoft Templates\CalendarVB\App_Code\Event.vb" />
+    <None Include="Microsoft Templates\CalendarVB\App_Code\ColorHelper.vb" />
+    <None Include="Microsoft Templates\CalendarVB\App_Code\Calendar.vb" />
+    <None Include="Microsoft Templates\CalendarVB\Account\_PageStart.vbhtml" />
+    <None Include="Microsoft Templates\CalendarVB\Account\Register.vbhtml" />
+    <None Include="Microsoft Templates\CalendarVB\Account\Logout.vbhtml" />
+    <None Include="Microsoft Templates\CalendarVB\Account\Login.vbhtml" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="View\Register.xaml">
@@ -155,6 +224,12 @@
     </Reference>
     <Reference Include="Xamarin.Forms.Maps">
       <HintPath>..\packages\Xamarin.Forms.Maps.2.5.1.444934\lib\portable-win+net45+wp80+win81+wpa81\Xamarin.Forms.Maps.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Threading.Tasks">
+      <HintPath>..\packages\Microsoft.Bcl.Async.1.0.168\lib\portable-net45+win8+wpa81\Microsoft.Threading.Tasks.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Threading.Tasks.Extensions">
+      <HintPath>..\packages\Microsoft.Bcl.Async.1.0.168\lib\portable-net45+win8+wpa81\Microsoft.Threading.Tasks.Extensions.dll</HintPath>
     </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />

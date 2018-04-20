@@ -1,0 +1,306 @@
+﻿body {
+    font-family: "Segoe UI", Calibri, Tahoma, Verdana, Arial, San-Serif;
+    font-size: .9em;
+}
+
+a {
+    color: inherit;
+}
+
+#header {
+    background-color: #f0f3f9;
+    padding: 1em;
+    overflow: hidden;
+}
+
+    #header a {
+        text-decoration: none;
+    }
+
+    #siteTitle {
+        font-size: 2em;
+        font-weight: normal;
+        float: left;
+    }
+
+#mainBody {
+    width: 1000px;
+    margin: auto;
+    border: 1px solid #d1d6df;
+    border-top: 0; 
+    overflow: hidden;
+}
+
+    #leftBar {
+        width: 200px;
+        float: left;
+    }
+    
+        /*  Navigation Menu
+        -----------------------------*/
+        .nav-section {
+            margin: 3px;
+            border: 1px solid #d1d6df;
+            margin-bottom: 10px;
+        }
+        
+            .nav-section h3 {
+                text-align: center;
+                background-color: #eff4ff;
+                padding: 3px;
+                font-size: 1em;
+                font-weight: normal;
+            }
+            
+            .nav-section li:not(.calendar-name) {
+                padding: 2px .5em 3px .5em;
+            }
+            
+                .theme-selected {
+                    background-color: #dfdfdf;
+                    border-color: #bfbfbf;
+                }
+
+        #userInfo li {
+            padding: 2px .5em 3px .5em;
+        }
+            
+    /*  Calendar and Info Pane
+    -----------------------------*/
+    #mainSection {
+        width: 799px;
+        float: right;
+        border-left: 1px solid #d1d6df;
+    }
+        
+        #calendarBar {
+            padding: 5px;
+            padding-bottom: 3px;
+            background-color: #f5f8ff;
+            overflow: hidden;
+        }
+        
+            #calendarLinks {
+                float: left;
+            }
+        
+            #calendarViews {
+                float: right;
+            }
+            
+        #calendarPane {
+            padding: 10px;
+            min-height: 450px;
+        }
+        
+            .list-day {
+                margin-bottom: 10px;
+            }
+            
+                .list-day ul {
+                    margin-left: 3em;
+                    float: left;
+                    min-width: 250px;
+                }
+
+                .list-day legend {
+                    font-weight: bold;
+                }
+                
+                .list-day label {
+                    float: left;
+                    clear: both;
+                    width: 150px;
+                }
+                
+        #information {
+            border-top: 1px solid #d1d6df;
+            min-height: 300px;
+        }
+        
+            h2 {
+                padding: .5em;
+                font-size: 1.1em;
+                background-color: #f0f3f9;
+            }
+            
+            #informationPane {
+                padding: 5px;
+            }
+            
+        form td {
+            padding: 2px;
+        }
+        
+            /* Center all children of td's */
+            form td > * {
+                vertical-align: middle;
+            }
+            
+            /* Progressive Enhancement for browsers that support it */
+            form td:first-child {
+                text-align: right;
+                padding-right: 10px;
+                width: 40%;
+                font-weight: bold;
+            }
+            
+            form td:last-child {
+                padding-left: 10px;
+                text-align: left;
+            }
+            
+            form #submit {
+                text-align: center !important;
+            }
+
+/*  Login
+-------------------------------------------------------*/
+#accountBox {
+    width: 600px;
+    margin: auto;
+    margin-top: 10em;
+    border: 1px solid #d1d6df;
+}
+
+    #accountBox div {
+        padding: 10px;
+    }
+    
+    #accountBox p {
+        text-align: center;
+        border: 1px solid #d1d6df;
+        padding: 5px;
+        margin-bottom: 10px;
+    }
+    
+    #accountForm label {
+        float: right;
+        display: block;
+        text-align: right;
+    }
+
+table {
+    width: 100%;
+}
+    caption {
+        padding: .5em;
+        font-size: 1.1em;
+        background-color: #f0f3f9;
+        border: 1px solid #d1d6df;
+    }
+    
+    table.info td, table.info th {
+        border: 1px solid gray;
+        padding: 5px 10px 5px 10px;
+    }
+    
+        table.info input, table.info textarea, table.info select {
+            border: 1px solid #d1d6df;
+        }
+        
+        table.info td:first-child {
+            text-align: right;
+            padding-right: 20px;
+            width: 40%;
+            font-weight: bold;
+        }
+        
+        /* Progressive Enhancement for browsers that support it */
+        table.info tr:nth-child(odd) {
+            background-color: #dfdfdf;
+        }
+        
+    table.month-view td {
+        border: 1px solid #d1d6df;
+        height: 100px;
+        width: 100px;
+    }
+    
+        span.day-number {
+            padding: 2px;
+            font-size: .8em;
+        }
+
+    table.month-view th {
+        border: 1px solid #d1d6df;
+        padding: 5px;
+    }
+
+    table.month-view td.inactive {
+        background-color: #f0f3f9;
+    }
+    table.month-view td.today {
+        background-color: #efefef;
+    }
+
+.confirm {
+    background-color: #fff8af;
+    border: 1px solid #cfc55a;
+    padding: .5em;
+}
+
+    .confirm .actions {
+        margin-top: .5em;
+    }
+
+
+.calendar-name {
+    margin: 2px;
+    border: 1px solid #d1d6df;
+    padding: 2px .5em 3px .5em;
+}
+
+/*  Generic Classes
+-------------------------------------------------------*/
+.rounded-top {
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    -moz-border-radius-topleft: 5px;
+    -webkit-border-top-left-radius: 5px;
+    -moz-border-radius-topright: 5px;
+    -webkit-border-top-right-radius: 5px;
+}
+
+.rounded-bottom {
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    -moz-border-radius-bottomleft: 5px;
+    -webkit-border-bottom-left-radius: 5px;
+    -moz-border-radius-bottomright: 5px;
+    -webkit-border-bottom-right-radius: 5px;
+}
+
+.center {
+    text-align: center !important;
+}
+
+.border-bottom {
+    border-bottom: 1px solid #d1d6df;
+}
+
+.swatch {
+    width: 10px;
+    height: 1em;
+    display: inline-block;
+    border: 1px solid black;
+    margin-left: 10px;
+    margin-right: 5px;
+}
+
+.validation-summary-errors {
+    background-color: #ffdbcf;
+    border: 1px solid #bfa49b;
+    padding: 5px;
+    line-height: 1.2em;
+    font-size: .9em;
+    margin-bottom: 5px;
+}
+
+#jqueryColor {
+    width: 7em;
+}
+
+.width100 {
+    width: 100px;
+}

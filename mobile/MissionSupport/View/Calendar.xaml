@@ -35,6 +35,18 @@
                             VerticalTextAlignment="Center"
                             Margin = "10,40,10,10" ></Label>
 
+                     <DatePicker x:Name="MainDatePicker"
+                                 MinimumDate="3/8/2016" 
+                                 MaximumDate="3/8/2018"/>
+
+                     <Label x:Name="MainLabel"
+                            Text="{Binding Date, Source = {x:Reference MainDatePicker}}"
+                            FontSize="30"
+                            HorizontalOptions="Center"
+                            TextColor="Black"/>
+                            
+
+
 
          
                 </StackLayout>

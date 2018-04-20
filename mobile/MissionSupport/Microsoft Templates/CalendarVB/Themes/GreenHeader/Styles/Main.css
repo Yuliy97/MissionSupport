@@ -1,0 +1,10 @@
+﻿/*-------------------------------------
+    Default Border Color: #000
+    Default background color: #0bbf13
+-------------------------------------*/
+
+@import url("../../Default/Styles/Main.css");
+#header {
+    background-color: #0bbf13;
+    border-color: #000;
+}

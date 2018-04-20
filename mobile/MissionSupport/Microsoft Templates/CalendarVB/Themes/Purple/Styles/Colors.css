@@ -1,0 +1,125 @@
+﻿/*-------------------------------------------
+    Default border Color: #24002f
+    Default background color: #2f2f2f
+-------------------------------------------*/
+body {
+    background-color: #fbefff;
+    color: #24002f;
+}
+
+#header {
+    background-color: #8a4f9f;
+    color: #fff;
+    border-color: #24002f;
+}
+
+#mainBody {
+    background-color: #ebe0ef;
+    border-color: #24002f;
+}
+
+    .nav-section {
+        border-color: #24002f;
+    }
+    
+        .nav-section h3 {
+            background-color: #8a4f9f;
+            color: #fff;
+        }
+        
+            .theme-selected {
+                background-color: #bd8ecf;
+            }
+            
+    #mainSection {
+        border-color: #24002f;
+        background-color: #fff;
+    }
+    
+        #calendarBar {
+            background-color: #bd8ecf;
+        }
+        
+        #information {
+            border: none;
+        }
+        
+            #information h2 {
+                border: 1px solid #24002f;
+                background-color: #bd8ecf;
+            }
+            
+            #informationPane {
+                padding: 0;
+            }
+
+#accountBox {
+    border-color: #24002f;
+}
+
+    #accountBox h2 {
+        background-color: #8a4f9f;
+    }
+    
+    #accountBox p {
+        background-color: #bd8ecf;
+        border-color: #24002f;
+    }
+
+caption {
+    background-color: #bd8ecf;
+    color: black;
+    border-color: #24002f;
+}
+
+table.info input, table.info textarea, table.info select {
+    border-color: #24002f;
+}
+
+    table.info tr:nth-child(even) {
+        background-color: #fff;
+    }
+    
+    table.info tr:nth-child(odd) {
+        background-color: #ebe0ef;
+    }
+
+table.month-view {
+    border-collapse: separate;
+    border-spacing: 2px;
+}
+
+    table.month-view td {
+        border: none;
+        border: 1px dashed #bd8ecf;
+    }
+    
+    table.month-view td.inactive {
+        background-color: #ebe0ef;
+    }
+
+    table.month-view th {
+        border-color: #24002f;
+        background-color: #ebe0ef;
+    }
+    
+.confirm {
+    background-color: #fff8af;
+    border-color: #cfc55a;
+}
+
+.calendar-name {
+    border-color: #24002f;
+    color: #000;
+}
+
+/*  Generic Classes
+-------------------------------------------------------*/
+.border-bottom {
+    border-color: #24002f;
+}
+
+.validation-summary-errors {
+    background-color: #df7da6;
+    border-color: #24002f;
+}

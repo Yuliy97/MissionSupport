@@ -55,5 +55,9 @@ namespace MissionSupport.View
                 DescriptionEditor.TextColor = Color.Black;
             }
         }
+        private void DatePicker_OnSelected(object sender, DateChangedEventArgs e)
+        {
+            MainLabel.Text = e.NewDate.ToString();
+        }
     }
 }

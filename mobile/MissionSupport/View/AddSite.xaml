@@ -41,6 +41,16 @@
                             Focused="DescriptionEditor_Focused"
                         />
 
+                        <DatePicker x:Name="MainDatePicker"
+                            MinimumDate="3/8/2016" 
+                            MaximumDate="3/8/2018"/>
+
+                        <Label x:Name="MainLabel"
+                            Text="{Binding Date, Source = {x:Reference MainDatePicker}}"
+                            FontSize="30"
+                            HorizontalOptions="Center"
+                            TextColor="Black"/>
+
                         <Button x:Name="CreateButton" 
                             Text="Create" 
                             BackgroundColor="Teal"
@@ -48,6 +58,8 @@
                             Clicked="CreateButton_Clicked"
                             Margin="10"
                         />
+
+                       
                     </StackLayout>
                 </Frame>
             </StackLayout>
