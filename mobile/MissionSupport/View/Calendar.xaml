@@ -43,8 +43,7 @@
                             Text="{Binding Date, Source = {x:Reference MainDatePicker}}"
                             FontSize="30"
                             HorizontalOptions="Center"
-                            TextColor="Black"/>
-                            
+                            TextColor="Black"/>   
 
 
 

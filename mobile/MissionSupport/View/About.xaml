@@ -60,7 +60,7 @@
                      <Label Text="We are a team of 6 students from Georgia Tech" 
                             HorizontalTextAlignment="Center" />
 
-                     <Image Source="/Images/fayaz.jpg"
+                     <Image x:Name="Fayaz"
                             HorizontalOptions="Center" 
                             WidthRequest="100"
                             HeightRequest="100"/>
@@ -70,7 +70,7 @@
                             FontSize="22" />
                      <Label Text="Fayaz is a 3rd year CS Major studying AI and People. Fayaz enjoys fashion, collecting sneakers, and browsing Reddit."/>
 
-                     <Image Source="/Images/taylor.jpg"
+                     <Image x:Name="Taylor"
                             HorizontalOptions="Center" 
                             WidthRequest="100"
                             HeightRequest="100"/>
@@ -80,7 +80,7 @@
                             FontSize="22" />
                      <Label Text="Taylor is a 3rd year CS Major studying AI and Theory. In his free time, Taylor likes to read, swim, and cook."/>
 
-                     <Image Source="/Images/yuli.jpg"
+                     <Image x:Name="Yuli"
                             HorizontalOptions="Center" 
                             WidthRequest="100"
                             HeightRequest="100"/>
@@ -90,7 +90,7 @@
                             FontSize="22" />
                      <Label Text="Yuli is a 3rd year CS Major studying AI and Information Info-networks. She is a big foodie and loves hiking."/>
 
-                     <Image Source="/Images/abdullah.jpg"
+                     <Image x:Name="Abdullah"
                             HorizontalOptions="Center" 
                             WidthRequest="100"
                             HeightRequest="100"/>
@@ -100,7 +100,7 @@
                             FontSize="22" />
                      <Label Text="Abdullah Khan is a 3rd year CS Major studying Media and People. He enjoys magic tricks and not eating oranges."/>
 
-                     <Image Source="/Images/maddie.jpg"
+                     <Image x:Name="Maddie"
                             HorizontalOptions="Center" 
                             WidthRequest="100"
                             HeightRequest="100"/>
@@ -110,7 +110,7 @@
                             FontSize="22" />
                      <Label Text="Maddie is a graduating CS Major studying AI and People. Maddie enjoys spending time with her dog Mr. Darcy."/>
 
-                     <Image Source="/Images/an.jpg"
+                     <Image x:Name="An"
                             HorizontalOptions="Center" 
                             WidthRequest="100"
                             HeightRequest="100"/>
