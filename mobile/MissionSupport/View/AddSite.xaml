@@ -23,15 +23,20 @@
                     <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
                         <Entry x:Name="NameEntry" 
                             Placeholder="Name" 
+                            WidthRequest="500"
                             Margin = "10,40,10,10"
                         />
 
                         <Entry x:Name="AddressEntry" 
                             Placeholder="Address"
+                            WidthRequest="500"
                             Margin="10"
                         />
 
                         <Editor x:Name="DescriptionEditor"
+                            WidthRequest="450"
+                            HeightRequest="100"
+                            TextColor="Silver"
                             Text="Description" 
                         />
 

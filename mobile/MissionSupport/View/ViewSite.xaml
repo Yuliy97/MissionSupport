@@ -21,12 +21,15 @@
                 VerticalOptions="CenterAndExpand">
                     <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
                         <Label x:Name="NameLabel" 
+                               WidthRequest="1000"
                         />
 
                         <Label x:Name="AddressLabel" 
+                               WidthRequest="1000"
                         />
 
                         <Label x:Name="DescriptionLabel" 
+                               WidthRequest="1000"
                         />
                     </StackLayout>
                 </Frame>
