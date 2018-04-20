@@ -9,7 +9,6 @@
             <ContentPage.Content>  
                 <StackLayout Margin="5,30,5,5">   
                     <Button Text="Home" TextColor="Teal" BackgroundColor="White" Clicked="Home_Clicked" Margin="10,40,10,10"></Button>  
-                    <Button Text="Profile" TextColor="Teal" BackgroundColor="White" Clicked="Profile_Clicked" Margin="10"></Button>  
                     <Button Text="Sites" TextColor="Teal" BackgroundColor="White" Clicked="Sites_Clicked" Margin="10"></Button>  
                     <Button Text="Calendar" TextColor="Teal" BackgroundColor="White" Clicked="Calendar_Clickded" Margin="10"></Button>  
                     <Button Text="About" TextColor="Teal" BackgroundColor="White" Clicked="About_Clickded" Margin="10"></Button>

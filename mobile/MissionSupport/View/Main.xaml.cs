@@ -22,12 +22,7 @@ namespace MissionSupport.View
         {  
             Detail = new NavigationPage(new Home());  
             IsPresented = false;  
-        } 
-        private void Profile_Clicked(object sender, EventArgs e)  
-        {  
-            Detail = new NavigationPage(new Profile());  
-            IsPresented = false;  
-        }  
+        }   
   
         private void Sites_Clicked(object sender, EventArgs e)  
         {  
