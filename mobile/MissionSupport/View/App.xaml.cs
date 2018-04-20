@@ -3,6 +3,7 @@ using MissionSupport.View;
 
 namespace MissionSupport
 {
+    
     public partial class App : Application
     {
         public App()
