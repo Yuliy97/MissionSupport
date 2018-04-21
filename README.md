@@ -18,6 +18,7 @@ https://docs.microsoft.com/en-us/xamarin/cross-platform/app-fundamentals/pcl?tab
 
 You will need to clone the git repository to your local machine. First open up terminal, and cd to a folder you want to place the code for Mission Support. The step below will clone a folder called MissionSupport to your current folder. 
   1) In terminal, type:
+  
     git clone https://github.com/Yuliy97/MissionSupport.git
  
 For the web application, you will need to install the following software: Nodemon and Angular. Follow the steps below to do this. 
