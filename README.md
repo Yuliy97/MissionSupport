@@ -1,4 +1,4 @@
-                              --- Mission Support Web and Mobile App Installation Guide ---
+# Mission Support Web and Mobile App Installation Guide
 
 ## Pre-requisites:
 
