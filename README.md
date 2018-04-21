@@ -11,6 +11,7 @@ The web version of Mission Support was built with a NodeJS and MongoDB. Please i
   2) Install MongoDB with steps at https://treehouse.github.io/installation-guides/mac/mongo-mac.html
 
 The mobile version of Mission Support was built with Xamarin Forms. The two main dependent libraries we used were .NET Standard projects and Portable Class Library (PCL).  See the link below for more descriptions.  You don’t have to manually install them as they are built in within visual studio.
+
 https://docs.microsoft.com/en-us/xamarin/cross-platform/app-fundamentals/pcl?tabs=vsmac
  
 ## Web Install Instructions: 
@@ -21,25 +22,34 @@ You will need to clone the git repository to your local machine. First open up t
  
 For the web application, you will need to install the following software: Nodemon and Angular. Follow the steps below to do this. 
   1) In terminal, go to the folder MissionSupport, then type:
+  
     npm install -g nodemon
   2) In the same folder MissionSupport, also type:
+  
     npm install -g @angular/cli
  
 ## Web Build Instructions:
 
 You will need to run these build instructions everytime you edit the code to ensure that the application updates the changes. Otherwise, you will only need to run the following instructions once to build the application.
   1) In terminal, go into the folder MissionSupport/web and type:
+  
     npm install
   2) Then go to the folder MissionSupport/web/ms-src
+  
     npm install
  
 ## Web Run Instructions:
 
   1) Open up two terminal windows. 
+  
   2) In first terminal window, cd into MissionSupport/web and type:
+  
     nodemon
+    
   3) In second terminal window, cd into MissionSupport/web/ms-src and type :
+  
     ng serve
+    
   4) Go to your browser window, go to the site http://localhost:4200 
 
 This is where where the web application will run on your local host.
