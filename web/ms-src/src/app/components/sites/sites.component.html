@@ -90,8 +90,9 @@
           </button>
         </div>
         <div class="modal-body">
-            <input type="text" class="form-control"  placeholder="Search" style="margin-bottom: 1%;">
-            <table class="table table-bordered">
+            <input type="search" id="search_bar" class="form-control" (input)="search()" placeholder="Search" style="margin-bottom: 1%;">
+            
+            <table class="table table-bordered" id="sites_table">
                 <thead>
                   <th scope="col">Site name</th>
                   <th scope="col">Address</th>

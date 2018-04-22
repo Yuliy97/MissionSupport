@@ -153,6 +153,26 @@ export class SitesComponent implements OnInit {
     });
  }
 
+ search() {
+  var input, filter, table, tr, td_site_name, td_address, i;
+  input = document.getElementById("search_bar");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("sites_table");
+  tr = table.getElementsByTagName("tr");
+
+  for (i = 0; i < tr.length; i++) {
+    td_site_name = tr[i].getElementsByTagName("td")[0];
+    td_address = tr[i].getElementsByTagName("td")[1];
+    if (td_site_name || td_address) {
+      if (td_site_name.innerHTML.toUpperCase().indexOf(filter) > -1 || td_address.innerHTML.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    } 
+  }
+}
+
   updated_markers = markers;
   site_info = names;
 }

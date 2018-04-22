@@ -11,3 +11,11 @@
 label, input {
   display: block
 }
+
+.modal-dialog{
+  overflow-y: initial
+}
+.modal-body{
+  height: 20em;
+  overflow-y: auto;
+}
