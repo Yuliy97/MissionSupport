@@ -49,22 +49,17 @@ export class SitesComponent implements OnInit {
     this.load_markers();
   }
 
-  containsObject(obj, list) {
-    var i;
-    for (i = 0; i < list.length; i++) {
-        if (list[i] === obj) {
-            return true;
-        }
-    }
-    return false;
-  }
-
   load_markers() {
     this.auth_service.get_all_sites().subscribe(data => {
       console.log(data);
       for (var i = 0; i < data.length; i++) {
         var addr = data[i].site_address;
-        names.push({name: data[i].site_name, organization: data[i].site_organization, information: data[i].site_information, date: data[i].created_on, address: data[i].site_address});
+        try {
+          this.gm_service.getLatLan(addr);
+          names.push({name: data[i].site_name, organization: data[i].site_organization, information: data[i].site_information, date: data[i].created_on, address: data[i].site_address});
+        } catch (err) {
+          //
+        }
         this.gm_service.getLatLan(addr)
         .subscribe(
             result => {
@@ -72,9 +67,7 @@ export class SitesComponent implements OnInit {
                     this.lat = result.lat();
                     this.lng = result.lng();
                     const mylatlng = {lat: this.lat, lng: this.lng};
-                    if (!this.containsObject(mylatlng, markers)) {
-                      markers.push(mylatlng);
-                    }
+                    markers.push(mylatlng)
                 })
             },
           error => console.log(error),
@@ -85,8 +78,8 @@ export class SitesComponent implements OnInit {
   }
 
   on_add() {
-    this.load_markers();
-    console.log(this.site_info);
+    var addr_verification = false;
+
     const site = {
       site_name: this.site_name,
       site_address: this.site_address,
@@ -103,6 +96,25 @@ export class SitesComponent implements OnInit {
 
     if (!this.validate_service.validate_site(site)) {
       alert("Please fill in all the fields");
+      return false;
+    }
+
+    this.gm_service.getLatLan(this.site_address as string)
+    .subscribe(
+        result => {
+            this.__zone.run(() => {
+                this.lat = result.lat();
+                this.lng = result.lng();
+                const mylatlng = {lat: this.lat, lng: this.lng};
+                addr_verification = true;
+            })
+        },
+      error => console.log(error),
+      () => console.log('Geocoding completed!')
+    );
+
+    if (addr_verification == false) {
+      alert("Invalid address!");
       return false;
     }
 

@@ -28,7 +28,7 @@ export class GMapsService extends GoogleMapsAPIWrapper {
                             console.error('Error - ', results, ' & Status - ', status);
                             if (status === google.maps.GeocoderStatus.ZERO_RESULTS) {
                                 observer.error('Address not found!');
-                            }else {
+                            } else {
                                 observer.error(status);
                             }
 
