@@ -16,6 +16,7 @@ import { AboutComponent } from './components/about/about.component';
 import { AgmCoreModule } from 'angular2-google-maps/core';
 import { MyDatePickerModule } from 'mydatepicker';
 import { GMapsService } from './services/google-maps.service';
+import { FullCalendarModule } from 'ng-fullcalendar';
 
 import { AuthService } from './services/auth.service';
 import { ValidateService } from './services/validate.service';
@@ -63,7 +64,8 @@ const googleMapsCore = AgmCoreModule.forRoot({
     RouterModule.forRoot(appRoutes),
     FlashMessagesModule,
     googleMapsCore,
-    MyDatePickerModule
+    MyDatePickerModule,
+    FullCalendarModule
   ],
   providers: [ValidateService, AuthService, AuthGuard, GMapsService],
   bootstrap: [AppComponent]

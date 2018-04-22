@@ -1,3 +1,5 @@
+<img src="../../../assets/ms_logo.png" class="center">
+
 <div class="jumbotron">
   <h1 class="line-1 anim-typewriter" style="margin-bottom: 2%;">Hi, welcome to Mission Support.</h1>
   <p class="lead" style="text-align: center;">Organize mission trips easily.</p>
@@ -25,3 +27,7 @@
     </div>
   </div>
 </body>
+
+<div *ngIf="calendarOptions">
+    <ng-fullcalendar #ucCalendar [options]="calendarOptions"></ng-fullcalendar>
+</div>
