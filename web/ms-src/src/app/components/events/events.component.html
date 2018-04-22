@@ -1,0 +1,38 @@
+<div *ngIf="calendarOptions">
+  <ng-fullcalendar #ucCalendar [options]="calendarOptions" [(eventsModel)]="events"></ng-fullcalendar>
+</div>
+<div class="container">
+  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#add_event_modal">Add event</button>
+</div>
+
+<div class="modal fade" id="add_event_modal" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Site Information</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <label>Event Name
+          <input type="text" [(ngModel)]="site_name" name="site_name" class="form-control">
+        </label>
+        <label>Start Date
+          <form #myForm="ngForm" novalidate>
+            <my-date-picker [(ngModel)]="created_on" name="created_on" [options]="myDatePickerOptions"
+                    [(ngModel)]="model" required></my-date-picker>
+          </form>        </label>
+        <label>End Date
+          <form #myForm="ngForm" novalidate>
+            <my-date-picker [(ngModel)]="created_on" name="created_on" [options]="myDatePickerOptions"
+                    [(ngModel)]="model" required></my-date-picker>
+          </form>        </label>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button (click)="on_add()" type="button" id="add_site" class="btn btn-primary" data-dismiss="modal">Submit</button>
+      </div>
+    </div>
+  </div>
+</div>

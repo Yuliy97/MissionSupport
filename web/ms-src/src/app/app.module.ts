@@ -25,6 +25,7 @@ import { AuthGuard } from './guards/auth.guard';
 import { SitesComponent } from './components/sites/sites.component';
 import { ResetComponent } from './components/reset/reset.component';
 import { AdminComponent } from './components/admin/admin.component';
+import { EventsComponent } from './components/events/events.component';
 
 
 const appRoutes: Routes = [
@@ -35,7 +36,8 @@ const appRoutes: Routes = [
     {path: 'reset', component: ResetComponent},
     {path: 'profile', component: ProfileComponent, canActivate:[AuthGuard]},
     {path: 'admin', component: AdminComponent, canActivate:[AuthGuard]},
-    {path: 'about', component: AboutComponent}
+    {path: 'about', component: AboutComponent},
+    {path: 'events', component: EventsComponent}
 ]
 
 const googleMapsCore = AgmCoreModule.forRoot({
@@ -54,7 +56,8 @@ const googleMapsCore = AgmCoreModule.forRoot({
     AboutComponent,
     SitesComponent,
     ResetComponent,
-    AdminComponent
+    AdminComponent,
+    EventsComponent
   ],
   imports: [
     CommonModule,

@@ -15,6 +15,9 @@
       <li >
         <button type="button" class="btn btn-primary" [routerLink] = "['/about']">About Us</button>
       </li >
+      <li >
+        <button type="button" class="btn btn-primary" [routerLink] = "['/events']">Events</button>
+      </li >
     </ul>
     <ul class="navbar-nav mr-sm-2">
       <li *ngIf="auth_service.loggedIn()" [routerLinkActive] = "['active']" [routerLinkActiveOptions] = "{exact:true}" class="nav-item active">
