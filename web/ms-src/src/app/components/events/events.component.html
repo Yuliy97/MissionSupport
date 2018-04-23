@@ -16,18 +16,26 @@
       </div>
       <div class="modal-body">
         <label>Event Name
-          <input type="text" [(ngModel)]="site_name" name="site_name" class="form-control">
+          <input type="text" [(ngModel)]="event_name" name="event_name" class="form-control">
+        </label>
+        <label>Event attendees
+          <input type="text" [(ngModel)]="attendees" name="attendees" class="form-control">
+        </label>
+        <label>Event Description
+          <textarea [(ngModel)]="event_description" name="event_description" class="form-control"></textarea>
         </label>
         <label>Start Date
           <form #myForm="ngForm" novalidate>
-            <my-date-picker [(ngModel)]="created_on" name="created_on" [options]="myDatePickerOptions"
+            <my-date-picker [(ngModel)]="start_date" name="start_date" [options]="myDatePickerOptions"
                     [(ngModel)]="model" required></my-date-picker>
-          </form>        </label>
+          </form>        
+        </label>
         <label>End Date
           <form #myForm="ngForm" novalidate>
-            <my-date-picker [(ngModel)]="created_on" name="created_on" [options]="myDatePickerOptions"
+            <my-date-picker [(ngModel)]="end_date" name="end_date" [options]="myDatePickerOptions"
                     [(ngModel)]="model" required></my-date-picker>
-          </form>        </label>
+          </form>        
+        </label>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
