@@ -15,7 +15,6 @@
              <strong>Address: {{site_info[i].address}}</strong>
              <br>
              <button type="button" (click)="on_edit(site_info[i])" *ngIf="auth_service.loggedIn()" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-sm">Add Site Information</button>
-
          </sebm-google-map-info-window>
      </sebm-google-map-marker>
 </sebm-google-map>

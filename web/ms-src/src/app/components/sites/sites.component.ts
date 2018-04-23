@@ -11,6 +11,7 @@ import { Location } from '@angular/common';
 
 var markers = [];
 var names = [];
+var addr_verification = [];
 
 @Component({
   selector: 'app-sites',
@@ -22,11 +23,11 @@ var names = [];
 export class SitesComponent implements OnInit {
 
   markers = [];
-
-  site_name: String;
-  site_address: String;
-  site_organization: String;
-  site_information: String;
+  
+  site_name: string;
+  site_address: string;
+  site_organization: string;
+  site_information: string;
   created_on: Date;
 
   myDatePickerOptions: IMyDpOptions = {
@@ -54,12 +55,8 @@ export class SitesComponent implements OnInit {
       console.log(data);
       for (var i = 0; i < data.length; i++) {
         var addr = data[i].site_address;
-        try {
-          this.gm_service.getLatLan(addr);
-          names.push({name: data[i].site_name, organization: data[i].site_organization, information: data[i].site_information, date: data[i].created_on, address: data[i].site_address});
-        } catch (err) {
-          //
-        }
+        this.gm_service.getLatLan(addr);
+        names.push({name: data[i].site_name, organization: data[i].site_organization, information: data[i].site_information, date: data[i].created_on, address: data[i].site_address});
         this.gm_service.getLatLan(addr)
         .subscribe(
             result => {
@@ -78,8 +75,6 @@ export class SitesComponent implements OnInit {
   }
 
   on_add() {
-    var addr_verification = false;
-
     const site = {
       site_name: this.site_name,
       site_address: this.site_address,
@@ -99,25 +94,28 @@ export class SitesComponent implements OnInit {
       return false;
     }
 
-    this.gm_service.getLatLan(this.site_address as string)
+    this.gm_service.getLatLan(site.site_address)
     .subscribe(
         result => {
             this.__zone.run(() => {
                 this.lat = result.lat();
                 this.lng = result.lng();
                 const mylatlng = {lat: this.lat, lng: this.lng};
-                addr_verification = true;
+                addr_verification.push(mylatlng);
             })
         },
       error => console.log(error),
       () => console.log('Geocoding completed!')
     );
 
-    if (addr_verification == false) {
+    setTimeout(() => this.verify(site), 800);
+  }
+
+  verify(site) {
+    if (addr_verification.length == 0) {
       alert("Invalid address!");
       return false;
     }
-
     this.auth_service.create_site(site).subscribe(data => {
       if (data.success) {
         alert("You have successfully created a site");
@@ -126,13 +124,14 @@ export class SitesComponent implements OnInit {
         alert("Something went wrong");
       }
     });
+    console.log(addr_verification);
   }
 
- on_edit(site) {
-     this.auth_service.last_accesed_site(site);
- }
+  on_edit(site) {
+    this.auth_service.last_accesed_site(site);
+  }
 
- on_save_edits(){
+  on_save_edits(){
     var item = this.auth_service.get_last_accesed_site();
 
     item.information = this.site_information;
@@ -151,28 +150,30 @@ export class SitesComponent implements OnInit {
         alert("Something went wrong");
       }
     });
- }
-
- search() {
-  var input, filter, table, tr, td_site_name, td_address, i;
-  input = document.getElementById("search_bar");
-  filter = input.value.toUpperCase();
-  table = document.getElementById("sites_table");
-  tr = table.getElementsByTagName("tr");
-
-  for (i = 0; i < tr.length; i++) {
-    td_site_name = tr[i].getElementsByTagName("td")[0];
-    td_address = tr[i].getElementsByTagName("td")[1];
-    if (td_site_name || td_address) {
-      if (td_site_name.innerHTML.toUpperCase().indexOf(filter) > -1 || td_address.innerHTML.toUpperCase().indexOf(filter) > -1) {
-        tr[i].style.display = "";
-      } else {
-        tr[i].style.display = "none";
-      }
-    } 
   }
-}
+
+  search() {
+    console.log(markers);
+    var input, filter, table, tr, td_site_name, td_address, i;
+    input = document.getElementById("search_bar");
+    filter = input.value.toUpperCase();
+    table = document.getElementById("sites_table");
+    tr = table.getElementsByTagName("tr");
+
+    for (i = 0; i < tr.length; i++) {
+      td_site_name = tr[i].getElementsByTagName("td")[0];
+      td_address = tr[i].getElementsByTagName("td")[1];
+      if (td_site_name || td_address) {
+        if (td_site_name.innerHTML.toUpperCase().indexOf(filter) > -1 || td_address.innerHTML.toUpperCase().indexOf(filter) > -1) {
+          tr[i].style.display = "";
+        } else {
+          tr[i].style.display = "none";
+        }
+      } 
+    }
+  }
 
   updated_markers = markers;
   site_info = names;
+
 }
