@@ -4,6 +4,11 @@ import { Options } from 'fullcalendar';
 
 var _events = [{title: 'Mission Support Capstone', start: '2018-04-23', end: '2018-04-24'}];
 
+/*TODO: Create backend structure for adding calendar events.
+* Known issues: Getting the date from the date picker doesn't allow events to be added to the calendar. 
+*               The date must be formatted as 'year-mm-dd' for it to render on the calendar itself.
+*/
+
 @Component({
   selector: 'app-events',
   templateUrl: './events.component.html',
@@ -39,6 +44,7 @@ export class EventsComponent implements OnInit {
       };
   }
 
+  // attempt at formatting the date
   // format(str) {
   //   if (str) {
   //     var result = str.substring(6, 10) + "-" + str.substring(0, 2) + "-" + str.substring(3, 5)
@@ -48,6 +54,8 @@ export class EventsComponent implements OnInit {
   //   }
   // }
 
+  // adding events frontend
+  // start and end date should come from the modal that prompts user to fill out event details
   on_add() {
     const event = {
       title: this.event_name,

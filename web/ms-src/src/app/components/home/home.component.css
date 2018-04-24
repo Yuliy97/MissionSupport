@@ -16,7 +16,7 @@ body {
   background-size: cover;
   min-height: 100%;
   overflow: hidden;
-  height: calc(100vh - 30em);
+  height: calc(100vh - 50em);
   padding: 2em;
   margin: 0px;
 }
@@ -52,5 +52,5 @@ body {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  width: 20%;
+  width: 30%;
 }

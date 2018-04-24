@@ -13,6 +13,11 @@ var markers = [];
 var names = [];
 var addr_verification = [];
 
+/* TODO: Fix QUERY_OVER_LIMIT bug that allows only 10 sites to be loaded on the Google map
+  * Error can be viewed in the Google chrome console after >10 sites have been added to the DB.
+  * Also, implement editing site field information backend functionality. 
+  */
+
 @Component({
   selector: 'app-sites',
   templateUrl: './sites.component.html',

@@ -3,6 +3,10 @@ import { AuthService } from '../../services/auth.service';
 import { FlashMessagesService } from 'angular2-flash-messages/module';
 import { Router } from '@angular/router';
 
+/*TODO: Create email server to send password reset link
+* Right now all it does is find the user to send the email to, but doesn't send an actual email.
+*/
+
 @Component({
   selector: 'app-reset',
   templateUrl: './reset.component.html',

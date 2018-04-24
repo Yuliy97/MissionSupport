@@ -4,6 +4,9 @@ import { AuthService } from '../../services/auth.service';
 import { FlashMessagesService } from 'angular2-flash-messages/module';
 import { Router } from '@angular/router';
 
+/*TODO: Create more relevant fields for registration and provide other standards for password and username validation.
+* (i.e. password must be at least 8 characters long and contain one numeric character)
+*/
 
 @Component({
   selector: 'app-registration',

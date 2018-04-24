@@ -9,6 +9,9 @@ var users = [];
 var initialOpen = true;
 var somethingChanged = false;
 
+/* TODO: Implement deleting from the database and verifying users.
+*/
+
 @Component({
   selector: 'app-admin',
   templateUrl: './admin.component.html',
